@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Test from "./pages/Test";
+import Inloggen from "./pages/Inloggen";
+import Registreren from "./pages/Registreren";
 
 function App() {
   return (
@@ -10,21 +9,14 @@ function App() {
       <div className="Test">
         <nav>
           <ul>
-            <li>
-              <Link to="/pages/Home">Home</Link>
-            </li>
-            <li>
-              <Link to="/pages/About">About</Link>
-            </li>
-            <li>
-              <Link to="/pages/Test">Test</Link>
-            </li>
+            <Link to="/pages/Inloggen">Inloggen</Link>
+            <br />
+            <Link to="/pages/Registreren">Registreren</Link>
           </ul>
         </nav>
         <Routes>
-          <Route path="/pages/Home" element={<Home />} />
-          <Route path="/pages/About" element={<About />} />
-          <Route path="/pages/Test" element={<Test />} />
+          <Route path="/pages/Inloggen" element={<Inloggen />} />
+          <Route path="/pages/Registreren" element={<Registreren />} />
         </Routes>
       </div>
     </Router>
