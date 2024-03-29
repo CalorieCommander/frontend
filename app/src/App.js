@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Inloggen from "./pages/Inloggen";
 import Registreren from "./pages/Registreren";
 import logo from "./img/caloriecommander.png";
+import ananas from "./img/fruit.png";
+import kiwi from "./img/kiwi.png";
 
 function App() {
   return (
@@ -12,10 +14,16 @@ function App() {
           <img src={logo} className="logo" />
         </div>
         <div className="line"></div>
+        <img src={ananas} className="fruit-ananas" />
+        <img src={kiwi} className="fruit-kiwi" />
         <ul>
-          <Link to="/pages/Inloggen">Inloggen</Link>
+          <Link to="/pages/Inloggen" className="inlogpage">
+            Inloggen
+          </Link>
           <br />
-          <Link to="/pages/Registreren">Registreren</Link>
+          <Link to="/pages/Registreren" className="registratiepage">
+            Registreren
+          </Link>
         </ul>
 
         <Routes>
