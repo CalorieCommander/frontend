@@ -8,6 +8,8 @@ import kiwi from "./img/kiwi.png";
 import watermelon from "./img/watermelon.png";
 import peach from "./img/peach.png";
 import banana from "./img/banana.png";
+import pear from "./img/pear.png";
+import apple from "./img/apple.png";
 
 function App() {
   return (
@@ -23,15 +25,11 @@ function App() {
         <img src={peach} alt="peach" className="fruit-peach" />
         <img src={banana} alt="banana" className="fruit-banana" />
 
-        <img src={ananas} alt="ananas" className="fruit-ananas right" />
-        <img src={kiwi} alt="kiwi" className="fruit-kiwi right" />
-        <img
-          src={watermelon}
-          alt="watermelon"
-          className="fruit-watermelon right"
-        />
+        <img src={pear} alt="pear" className="fruit-ananas right" />
+        <img src={banana} alt="banana" className="fruit-kiwi right" />
+        <img src={apple} alt="apple" className="fruit-watermelon right" />
         <img src={peach} alt="peach" className="fruit-peach right" />
-        <img src={banana} alt="banana" className="fruit-banana right" />
+        <img src={kiwi} alt="kiwi" className="fruit-banana right" />
         <div className="tekst">
           WELKOM BIJ
           <br />
