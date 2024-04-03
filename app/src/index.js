@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  var username = document.getElementById('username').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var confirmPassword = document.getElementById('confirmPassword').value;
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  if (password !== confirmPassword) {
+      document.getElementById('message').innerHTML = '<p id="error">Passwords do not match.</p>';
+      return;
+  }
+
+  // Here you can perform further validation or send the registration data to a server
+  // For this example, let's just display a success message
+  document.getElementById('message').innerHTML = '<p>Registration successful for username: ' + username + '</p>';
+});
