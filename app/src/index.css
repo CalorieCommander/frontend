@@ -70,14 +70,15 @@ code {
 
 .button {
   position: absolute;
-  margin-left: 30vw;
-  margin-top: 7vw;
-  background: linear-gradient(to right, #A7C520, #0097B2); 
-  color: white;
-  padding: 1.5vw 7vw; 
-  border-radius: 20vw; 
-  border: none; 
-  cursor: pointer; 
-  font-size: 1vw;
-  text-decoration: none;
+left: 50%;
+transform: translateX(-50%);
+margin-top: 7vw;
+background: linear-gradient(to right, #A7C520, #0097B2); 
+color: white;
+padding: 1.5vw 7vw; 
+border-radius: 20vw; 
+border: none; 
+cursor: pointer; 
+font-size: 1vw;
+text-decoration: none;
 }
