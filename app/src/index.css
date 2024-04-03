@@ -83,7 +83,7 @@ code {
   transform: rotate(-10deg);
 }
 
-.fruit-ananas, .fruit-kiwi, .fruit-watermelon, .fruit-peach, .fruit-banana, .fruit-pear {
+.fruit-ananas, .fruit-kiwi, .fruit-watermelon, .fruit-peach, .fruit-banana, .fruit-pear, .fruit-apple {
   position: absolute;
 }
 
@@ -94,8 +94,9 @@ code {
 }
 
 .fruit-pear.right {
- bottom: 34vw;
+ right: 2.5vw;
 }
+
 .fruit-kiwi.right {
   top: 7vw;
   right: 1vw;
@@ -115,7 +116,11 @@ code {
   right: 12vw;
 }
 
-.fruit-apple.right {
-  top: 8vw;
-  left: 13vw;
+.fruit-ananas.right {
+  width: 6vw;
 }
+
+.fruit-apple.right {
+  right: 15vw;
+}
+
