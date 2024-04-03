@@ -30,22 +30,6 @@ function App() {
         <img src={apple} alt="apple" className="fruit-watermelon right" />
         <img src={peach} alt="peach" className="fruit-peach right" />
         <img src={kiwi} alt="kiwi" className="fruit-banana right" />
-        <div className="tekst">
-          WELKOM BIJ
-          <br />
-          CALORIECOMMANDER
-        </div>
-        <div className="blauw-tekst">
-          Meld je hieronder aan om je leven
-          <br />
-          voorgoed te veranderen!
-        </div>
-        <Link to="/pages/Inloggen" className="button">
-          Inloggen
-        </Link>
-        <Link to="/pages/Registreren" className="button2">
-          Registreren
-        </Link>
 
         <Routes>
           <Route path="/pages/Inloggen" element={<Inloggen />} />
