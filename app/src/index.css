@@ -13,21 +13,8 @@ code {
 }
 
 
-/* inlog en registratie aanpassen bij startpagina */
-.inlogpage {
-  position: absolute;
-  margin-top: 30vw;
-  margin-left: 45vw;
-}
-
-.registratiepage {
-  position: absolute;
-  margin-top: 35vw;
-  margin-left: 45vw;
-}
-
-
 /*navbar bij startpagina aanpassen*/
+
 .navbar {
   background: linear-gradient(to right, #0097B2, #A7C520);
   max-width: 100vw;
@@ -50,6 +37,7 @@ code {
 
 
 /* alle fruit icons aanpassen bij startpagina */
+
 .fruit-ananas {
   margin-top: 5vw;
   margin-left: 5vw;
@@ -83,14 +71,31 @@ code {
   padding-left: 5vw;
 }
 
-.fruit-ananas, .fruit-kiwi, .fruit-watermelon, .fruit-peach, .fruit-banana {
+.fruit-pear {
+  width: 6vw;
+  padding-top: 40vw;
+  padding-left: 12.5vw;
+}
+
+.fruit-apple {
+  width: 6vw;
+  padding-top: 48vw;
+  transform: rotate(-10deg);
+}
+
+.fruit-ananas, .fruit-kiwi, .fruit-watermelon, .fruit-peach, .fruit-banana, .fruit-pear {
   position: absolute;
 }
+
+/* fruit icons aan de rechterkant aanpassen */
 
 .right {
   right: 10vw;
 }
 
+.fruit-pear.right {
+ bottom: 1vw;
+}
 .fruit-kiwi.right {
   top: 7vw;
   right: 1vw;
@@ -99,7 +104,6 @@ code {
 .fruit-watermelon.right {
   top: 8vw;
   right: 13vw;
-  
 }
 
 .fruit-peach.right {
@@ -111,54 +115,7 @@ code {
   right: 12vw;
 }
 
-/* tekst editing startpage */
-.tekst {
-  font-family: Horizon, sans-serif; 
-  color: #A7C521; 
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2), 
-  2px 2px 10px rgba(0, 0, 0, 0.15);
-  font-weight: 800;
-  font-size: 3vw;
-  text-indent: 7vw;
-  padding-left: 33vw;
-  padding-top: 8vw;
-}
-
-.blauw-tekst {
-  text-indent: -2vw;
-  font-weight: 700;
-  color: #0097B2;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-  padding-left: 44vw;
-  padding-top: 3vw;
-}
-
-/* button aanpassing in startpagina */
-
-.button {
-  position: absolute;
-  margin-left: 30vw;
-  margin-top: 7vw;
-  background: linear-gradient(to right, #A7C520, #0097B2); 
-  color: white;
-  padding: 1.5vw 7vw; 
-  border-radius: 20vw; 
-  border: none; 
-  cursor: pointer; 
-  font-size: 1vw;
-  text-decoration: none;
-}
-
-.button2 {
-  position: absolute;
-  margin-left: 55vw;
-  margin-top: 7vw;
-  background: linear-gradient(to right, #A7C520, #0097B2); 
-  color: white;
-  padding: 1.5vw 7vw; 
-  border-radius: 20vw; 
-  border: none; 
-  cursor: pointer; 
-  font-size: 1vw;
-  text-decoration: none;
+.fruit-apple.right {
+  top: 8vw;
+  left: 13vw;
 }
