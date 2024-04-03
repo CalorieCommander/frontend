@@ -32,11 +32,8 @@ function App() {
         <img src={apple} alt="apple" className="fruit-watermelon right" />
         <img src={peach} alt="peach" className="fruit-peach right" />
         <img src={kiwi} alt="kiwi" className="fruit-banana right" />
-<<<<<<< Updated upstream
-
-=======
         <img src={watermelon} alt="watermelon" className="fruit-apple right" />
->>>>>>> Stashed changes
+
         <Routes>
           <Route path="/pages/Inloggen" element={<Inloggen />} />
           <Route path="/pages/Registreren" element={<Registreren />} />
