@@ -1,1 +1,1 @@
-# frontend
+# Hierin wordt de startpagina gemaakt.
