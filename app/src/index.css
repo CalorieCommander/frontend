@@ -35,7 +35,60 @@ code {
   padding-top: 0.7vw;
 }
 
+/* hier komen de aanpassingen voor de accountinstellingen */
 
+.border {
+  width: 35vw; 
+  height: 80vh; 
+  border: 2px solid #000000; 
+  border-radius: 20px; 
+  margin: 10vh auto; 
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.name {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px; 
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-weight: 800;
+}
+
+.gegevens {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  font-size: 1.3vw; 
+  color: #000000; 
+  font-family: 'Canva Sans', sans-serif; 
+  font-weight: 800; 
+}
+
+.naam {
+  position: absolute;
+  top: 22%; 
+  left: 10%; 
+  font-size: 1vw; 
+  color: #000000; 
+  font-family: 'Open Sans', sans-serif; 
+  line-height: 3;
+}
+
+.border1 {
+  position: absolute;
+  top: 0;
+  left: 150px; /* Afstand van de tekst aanpassen */
+  width: 100px; /* Breedte van de rechthoek */
+  height: 60px; /* Hoogte van de rechthoek */
+  background-color: #cccccc; /* Grijs van binnen */
+  border: 2px solid #000000; /* Rand in de kleur zwart */
+}
 /* alle fruit icons aanpassen bij startpagina */
 
 .fruit-ananas {

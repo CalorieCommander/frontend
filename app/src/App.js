@@ -19,6 +19,19 @@ function App() {
           <img src={logo} alt="logo" className="logo" />
         </div>
         <div className="line"></div>
+        <div className="border">
+          <div className="name">cerchio</div>
+          <div className="gegevens">Gegevens</div>
+          <div className="naam">
+            Naam:
+            <br />
+            E-mailadres:
+            <br />
+            Geslacht:
+          </div>
+          <div className="border1"></div>
+        </div>
+
         <img src={ananas} alt="ananas" className="fruit-ananas" />
         <img src={kiwi} alt="kiwi" className="fruit-kiwi" />
         <img src={watermelon} alt="watermelon" className="fruit-watermelon" />
