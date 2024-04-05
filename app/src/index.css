@@ -82,13 +82,34 @@ code {
 
 .border1 {
   position: absolute;
-  top: 0;
-  left: 150px; /* Afstand van de tekst aanpassen */
-  width: 100px; /* Breedte van de rechthoek */
-  height: 60px; /* Hoogte van de rechthoek */
-  background-color: #cccccc; /* Grijs van binnen */
-  border: 2px solid #000000; /* Rand in de kleur zwart */
+  top: 10vw;
+  left: 13.5vw; 
+  width: 8vw;
+  height: 1.5vw; 
+  background-color: #cccccc; 
+  border: 0.1vw solid #000000; 
 }
+
+.border2 {
+  position: absolute;
+  top: 13vw; /* Aanpassen aan gewenste positie */
+  left: 13.5vw; /* Aanpassen aan gewenste positie */
+  width: 8vw;
+  height: 1.5vw;
+  background-color: #cccccc;
+  border: 0.1vw solid #000000;
+}
+
+.border3 {
+  position: absolute;
+  top: 16vw; /* Aanpassen aan gewenste positie */
+  left: 13.5vw; /* Aanpassen aan gewenste positie */
+  width: 8vw;
+  height: 1.5vw;
+  background-color: #cccccc;
+  border: 0.1vw solid #000000;
+}
+
 /* alle fruit icons aanpassen bij startpagina */
 
 .fruit-ananas {

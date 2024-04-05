@@ -30,6 +30,8 @@ function App() {
             Geslacht:
           </div>
           <div className="border1"></div>
+          <div className="border2"></div>
+          <div className="border3"></div>
         </div>
 
         <img src={ananas} alt="ananas" className="fruit-ananas" />
