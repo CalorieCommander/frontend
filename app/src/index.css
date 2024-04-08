@@ -35,17 +35,21 @@ code {
 }
 
 .logo {
-  position: relative;
+  position: absolute;
   max-width: 10vw;
   padding-left: 3vw;
   padding-top: 0.7vw;
 }
 
+.home{
+  position: absolute;
+  color: white;
+  padding-left: 85vw;
+  padding-top: 1.3vw;
+}
 
-/* alle fruit icons aanpassen bij startpagina */
-
-/* tekst editing startpage */
-.tekst {
+.text{
+  position: absolute;
   font-family: Horizon, sans-serif; 
   color: #A7C521; 
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2), 
@@ -53,32 +57,125 @@ code {
   font-weight: 800;
   font-size: 3vw;
   text-indent: 7vw;
-  padding-left: 33vw;
-  padding-top: 8vw;
+  padding-left: 34.5vw;
+  padding-top: 4vw;
 }
 
-.blauw-tekst {
-  text-indent: -2vw;
-  font-weight: 700;
-  color: #0097B2;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-  padding-left: 44vw;
-  padding-top: 3vw;
+.container {
+  position: absolute;
+  max-width: 400px;
+  margin-top: 150px;
+  margin-left: 36.5%;
+  padding: 20px;
 }
 
-/* button aanpassing in startpagina */
+input[type="email"] {
+  flex: 1;
+  width: 355px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+input[type="password"] {
+  flex: 1;
+  width: 355px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  margin-top: 5vh;
+}
 
 .button {
+  margin-top: 350px;
   position: absolute;
-left: 50%;
-transform: translateX(-50%);
-margin-top: 7vw;
-background: linear-gradient(to right, #A7C520, #0097B2); 
-color: white;
-padding: 1.5vw 7vw; 
-border-radius: 20vw; 
-border: none; 
-cursor: pointer; 
-font-size: 1vw;
-text-decoration: none;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #A7C520, #0097B2); 
+  color: white;
+  padding: 1.5vw 7vw; 
+  border-radius: 20vw; 
+  border: none; 
+  cursor: pointer; 
+  font-size: 1vw;
+  text-decoration: none;
+}
+
+.right{
+  right: 10vw;
+}
+
+.fruit-kiwi{
+  position: absolute;
+  margin-left: 2vw;
+  margin-top: 2vw;
+  width: 5vw;
+  transform: rotate(-10deg);
+}
+.fruit-watermelon{
+  position: absolute;
+  width: 5vw;
+  padding-top: 7vw;
+  padding-left: 10vw;
+  transform: rotate(+10deg);
+}
+.fruit-peach{
+  position: absolute;
+  width: 4vw;
+  padding-top: 17vw;
+  padding-left: 2vw;
+  transform: rotate(-10deg);
+}
+.fruit-banana{
+  position: absolute;
+  width: 4vw;
+  padding-top: 24vw;
+  padding-left: 10vw;
+}
+.fruit-pear{
+  position: absolute;
+  width: 4vw;
+  padding-top: 29vw;
+  padding-left: 4vw;
+}
+.fruit-apple{
+  position: absolute;
+  width: 4vw;
+  padding-top: 30vw;
+  transform: rotate(-10deg);
+}
+
+.right {
+  right: 10vw;
+}
+
+.fruit-kiwi.right {
+  top: 7vw;
+  right: 2.5vw;
+}
+
+.fruit-watermelon.right {
+  top: 7vw;
+  right: 10vw;
+}
+
+.fruit-peach.right {
+  top: 5vw;
+  right: 4vw;
+}
+
+.fruit-banana.right {
+  right: 11vw;
+  top: 3vw;
+}
+
+.fruit-pear.right {
+  right: 2.5vw;
+  top: 3vw;
+ }
+
+.fruit-apple.right {
+  right: 14vw;
 }
