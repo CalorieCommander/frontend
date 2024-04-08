@@ -188,6 +188,8 @@ input[type="text"] {
   border-radius: 10vw;
   top: 35vw;
   left: 10.5vw;
+  border: none;
+  cursor: pointer;
 }
 
 .gegevens-text {
@@ -195,7 +197,7 @@ input[type="text"] {
   color: #ffffff;
   font-size: 1.4vw;
   left: 1.2vw;
-  top: 0.5vw;
+  top: 0.8vw;
 }
 
 
