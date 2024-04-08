@@ -17,6 +17,7 @@ function App() {
       <div className="Test">
         <div className="navbar">
           <img src={logo} alt="logo" className="logo" />
+          <div className=""></div>
         </div>
         <div className="line"></div>
         <div className="border">
@@ -29,9 +30,9 @@ function App() {
             <br />
             Geslacht:
           </div>
-          <div className="border1"></div>
-          <div className="border2"></div>
-          <div className="border3"></div>
+          <input className="border1" type="text" placeholder="Cerchio" />
+          <input className="border2" type="text" placeholder="Cerchio" />
+          <input className="border2" type="text" placeholder="Cerchio" />
         </div>
 
         <img src={ananas} alt="ananas" className="fruit-ananas" />
