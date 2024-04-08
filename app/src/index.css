@@ -102,8 +102,8 @@ input[type="text"] {
 
 .input2 {
   position: absolute;
-  top: 13vw; /* Aanpassen aan gewenste positie */
-  left: 13.5vw; /* Aanpassen aan gewenste positie */
+  top: 13vw; 
+  left: 13.5vw; 
   width: 8vw;
   height: 1.5vw;
   background-color: #ffffff;
@@ -112,8 +112,8 @@ input[type="text"] {
 
 .input3 {
   position: absolute;
-  top: 16vw; /* Aanpassen aan gewenste positie */
-  left: 13.5vw; /* Aanpassen aan gewenste positie */
+  top: 16vw; 
+  left: 13.5vw; 
   width: 8vw;
   height: 1.5vw;
   background-color: #ffffff;
@@ -179,6 +179,25 @@ input[type="text"] {
   background-color: #ffffff; 
   border: 0.1vw solid #000000; 
 }
+
+.bewerken {
+  position: relative;
+  background: linear-gradient(to right, #0097B2, #A7C520);
+  width: 15vw;
+  height: 3vw;
+  border-radius: 10vw;
+  top: 35vw;
+  left: 10.5vw;
+}
+
+.gegevens-text {
+  position: absolute;
+  color: #ffffff;
+  font-size: 1.4vw;
+  left: 1.2vw;
+  top: 0.5vw;
+}
+
 
 /* alle fruit icons aanpassen bij startpagina */
 

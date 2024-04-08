@@ -47,6 +47,9 @@ function App() {
           <input className="input4" type="text" placeholder="19" />
           <input className="input5" type="text" placeholder="1.87 meter" />
           <input className="input6" type="text" placeholder="76 kg" />
+          <button className="bewerken">
+            <div className="gegevens-text">Gegevens bewerken</div>
+          </button>
         </div>
 
         <img src={ananas} alt="ananas" className="fruit-ananas" />
