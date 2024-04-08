@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Inloggen from "./pages/Inloggen";
 import Registreren from "./pages/Registreren";
+import Account from "./pages/Account";
 import logo from "./img/caloriecommander.png";
 import ananas from "./img/fruit.png";
 import kiwi from "./img/kiwi.png";
@@ -71,6 +72,7 @@ function App() {
         <Routes>
           <Route path="/pages/Inloggen" element={<Inloggen />} />
           <Route path="/pages/Registreren" element={<Registreren />} />
+          <Route path="/pages/Account" element={<Account />} />
         </Routes>
       </div>
     </Router>
