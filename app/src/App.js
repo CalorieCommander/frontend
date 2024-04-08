@@ -14,10 +14,10 @@ import apple from "./img/apple.png";
 function App() {
   return (
     <Router>
-      <div className="Test">
+      <div>
         <div className="navbar">
           <img src={logo} alt="logo" className="logo" />
-          <div className=""></div>
+          <div className="name-corner">CERCHIO</div>
         </div>
         <div className="line"></div>
         <div className="border">
@@ -30,9 +30,23 @@ function App() {
             <br />
             Geslacht:
           </div>
-          <input className="border1" type="text" placeholder="Cerchio" />
-          <input className="border2" type="text" placeholder="Cerchio" />
-          <input className="border2" type="text" placeholder="Cerchio" />
+          <input className="input1" type="text" placeholder="Cerchio" />
+          <input className="input2" type="text" placeholder="jojo@gmail.com" />
+          <input className="input3" type="text" placeholder="Man" />
+          <a className="password-link" href="#">
+            Wachtwoord veranderen
+          </a>
+          <div className="BMI">BMI</div>
+          <div className="bmi-gegevens">
+            Leeftijd:
+            <br />
+            Lengte:
+            <br />
+            Gewicht:
+          </div>
+          <input className="input4" type="text" placeholder="19" />
+          <input className="input5" type="text" placeholder="1.87 meter" />
+          <input className="input6" type="text" placeholder="76 kg" />
         </div>
 
         <img src={ananas} alt="ananas" className="fruit-ananas" />
