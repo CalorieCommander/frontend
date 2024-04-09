@@ -28,20 +28,20 @@ body {
   
   
   /*navbar bij startpagina aanpassen*/
-  .navbar {
+  .home-navbar {
     background: linear-gradient(to right, #0097B2, #A7C520);
     max-width: 100vw;
     height: 7vw;
   }
   
-  .line {
+  .home-line {
     background: linear-gradient(to right, #0097B2, #A7C520);
     box-shadow: 0 0.3vw 0.5vw rgba(0, 0, 0, 0.5);
     max-width: 100vw;
     height: 0.3vw;
   }
   
-  .logo {
+  .home-logo {
     position: relative;
     max-width: 10vw;
     padding-left: 3vw;
@@ -50,69 +50,69 @@ body {
   
   
   /* alle fruit icons aanpassen bij startpagina */
-  .fruit-ananas {
+  .home-fruit-ananas {
     margin-top: 5vw;
     margin-left: 5vw;
     width: 7vw;
     transform: rotate(-10deg);
   }
   
-  .fruit-kiwi {
+  .home-fruit-kiwi {
     width: 7vw;
     padding-top: 12vw;
     padding-left: 13vw;
     transform: rotate(+10deg);
   }
   
-  .fruit-watermelon {
+  .home-fruit-watermelon {
     width: 5vw;
     padding-top: 21vw;
     padding-left: 4vw;
     transform: rotate(-10deg);
   }
   
-  .fruit-peach {
+  .home-fruit-peach {
     width: 5vw;
     padding-top: 27vw;
     padding-left: 13vw;
   }
   
-  .fruit-banana {
+  .home-fruit-banana {
     width: 6vw;
     padding-top: 35vw;
     padding-left: 5vw;
   }
   
-  .fruit-ananas, .fruit-kiwi, .fruit-watermelon, .fruit-peach, .fruit-banana {
+  .home-fruit-ananas, .home-fruit-kiwi, .home-fruit-watermelon, .home-fruit-peach, .home-fruit-banana {
     position: absolute;
   }
   
-  .right {
+  .home-right {
     right: 10vw;
   }
   
-  .fruit-kiwi.right {
+  .home-fruit-kiwi.home-right {
     top: 7vw;
     right: 1vw;
   }
   
-  .fruit-watermelon.right {
+  .home-fruit-watermelon.home-right {
     top: 8vw;
     right: 13vw;
     
   }
   
-  .fruit-peach.right {
+  .home-fruit-peach.home-right {
     top: 8vw;
     right: 3vw;
   }
   
-  .fruit-banana.right {
+  .home-fruit-banana.home-right {
     right: 12vw;
   }
   
   /* tekst editing startpage */
-  .tekst {
+  .home-tekst {
     font-family: Horizon, sans-serif; 
     color: #A7C521; 
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2), 
@@ -124,18 +124,18 @@ body {
     padding-top: 8vw;
   }
   
-  .blauw-tekst {
+  .home-blauw-tekst {
     text-indent: -2vw;
     font-weight: 700;
     color: #0097B2;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    padding-left: 44vw;
+    padding-left: 46.5vw;
     padding-top: 3vw;
   }
   
   /* button aanpassing in startpagina */
   
-  .button {
+  .home-button {
     position: absolute;
     margin-left: 30vw;
     margin-top: 7vw;
@@ -149,7 +149,7 @@ body {
     text-decoration: none;
   }
   
-  .button2 {
+  .home-button2 {
     position: absolute;
     margin-left: 55vw;
     margin-top: 7vw;

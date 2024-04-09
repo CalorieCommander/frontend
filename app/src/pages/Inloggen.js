@@ -13,40 +13,38 @@ import logo from '../img/caloriecommander.png';
 const Inloggen = () => {
   return (
     <div className="Test">
-      <div className="navbar">
-        <img src={logo} alt="logo" className="logo" />
-        <h2 className="home">HOME</h2>
+      <div className="login-navbar">
+        <img src={logo} alt="logo" className="login-logo" />
+        <h2 className="login-home">HOME</h2>
       </div>
-      <div className="line"></div>
+      <div className="login-line"></div>
 
-      <div className="text">
+      <div className="login-text">
         INLOGGEN
       </div>
 
 
-      <div className="container">
+      <div className="login-container">
         <form action="#" method="post">
-          <input type="email" id="email" name="email" placeholder="Your email address" required></input>
+          <input type="email" id="email" name="login-email" placeholder="Your email address" required></input>
         </form>
         <form action="#" method="post">
-          <input type="password" id="password" name="password" placeholder="Your Password" required></input>
+          <input type="password" id="password" name="login-password" placeholder="Your Password" required></input>
         </form>
       </div>
-      <img src={ananas} alt="ananas" className="fruit-ananas" />
-      <img src={kiwi} alt="kiwi" className="fruit-kiwi" />
-      <img src={watermelon} alt="watermelon" className="fruit-watermelon" />
-      <img src={peach} alt="peach" className="fruit-peach" />
-      <img src={banana} alt="banana" className="fruit-banana" />
+      <img src={ananas} alt="ananas" className="login-fruit-ananas" />
+      <img src={kiwi} alt="kiwi" className="login-fruit-kiwi" />
+      <img src={watermelon} alt="watermelon" className="login-fruit-watermelon" />
+      <img src={peach} alt="peach" className="login-fruit-peach" />
+      <img src={banana} alt="banana" className="login-fruit-banana" />
 
-      <img src={pear} alt="pear" className="fruit-ananas right" />
-      <img src={banana} alt="banana" className="fruit-kiwi right" />
-      <img src={apple} alt="apple" className="fruit-watermelon right" />
-      <img src={peach} alt="peach" className="fruit-peach right" />
-      <img src={kiwi} alt="kiwi" className="fruit-banana right" />
+      <img src={pear} alt="pear" className="login-fruit-ananas login-right" />
+      <img src={banana} alt="banana" className="login-fruit-kiwi login-right" />
+      <img src={apple} alt="apple" className="login-fruit-watermelon login-right" />
+      <img src={peach} alt="peach" className="login-fruit-peach login-right" />
+      <img src={kiwi} alt="kiwi" className="login-fruit-banana login-right" />
 
-      <Link to="/Registreren" className="button2">
-        Registreren
-      </Link>
+
     </div>
   );
 };
