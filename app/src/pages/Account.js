@@ -39,8 +39,13 @@ const AccountPage = () => {
         <input className="input5" type="text" placeholder="1.87 meter" />
         <input className="input6" type="text" placeholder="76 kg" />
         <button className="bewerken">
-          <div className="gegevens-text">Gegevens bewerken</div>
+          <a href="#" className="gegevens-text">
+            Gegevens bewerken
+          </a>
         </button>
+        <a href="#" className="verwijderen-text">
+          Account verwijderen
+        </a>
       </div>
 
       <img src={ananas} alt="ananas" className="fruit-ananas" />
