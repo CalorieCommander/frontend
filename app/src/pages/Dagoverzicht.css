@@ -1,0 +1,42 @@
+.dag-name {
+    position: absolute;
+    font-weight: 800;
+    font-size: 1.4vw;
+    color: #E5FFD0;
+    font-family: 'Horizen', sans-serif;
+    right: 4vw;
+    top: 2.5vw;
+    text-decoration: none;
+}
+/* dagoverzicht aanpassingen */
+
+.dag-top-border {
+    position: absolute;
+    width: 55vw; 
+    height: 30vw; 
+    background-color: white;
+    border: 0.2vw solid black;
+    border-radius: 10px; 
+    left: 21.5vw;
+    top: 12vw;
+  }
+
+.dag-vandaag-text {
+  position: absolute;
+  color: #666666;
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: bold; 
+  font-size: 1.3vw;
+  left: 3vw; 
+  top: 1.5vw; 
+}
+  
+.dag-datum-text {
+    position: absolute;
+    color: #666666;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: bold; 
+    font-size: 1.3vw;
+    left: 25vw; 
+    top: 1.5vw; 
+  }
