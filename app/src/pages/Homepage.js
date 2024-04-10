@@ -28,16 +28,11 @@ const Homepage = () => {
             <img src={apple} alt="apple" className="home-fruit-watermelon home-right" />
             <img src={peach} alt="peach" className="home-fruit-peach home-right" />
             <img src={kiwi} alt="kiwi" className="home-fruit-banana home-right" />
-            <div className="home-tekst">
-                WELKOM BIJ
-                <br />
-                CALORIECOMMANDER
-            </div>
-            <div className="home-blauw-tekst">
-                Meld je hieronder aan om je leven
-                <br />
-                voorgoed te veranderen!
-            </div>
+            <div className="home-tekst1">WELKOM BIJ</div>
+            <div className="home-tekst2">CALORIE COMMANDER</div>
+            
+            <div className="home-blauw-tekst">Meld je hieronder aan om je leven</div>
+            <div className="home-blauw-tekst2">voorgoed te veranderen!</div>
             <Link to="/Inloggen" className="home-button">
                 Inloggen
             </Link>
