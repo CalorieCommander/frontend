@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -22,8 +21,9 @@ function App() {
 
         <Routes>
           <Route path="/pages/Account" element={<AccountPage />} />
-          <Route path="/*" element={<PageWithAccountButton />} />
         </Routes>
+
+        <PageWithAccountButton />
       </div>
     </Router>
   );
@@ -34,11 +34,9 @@ function PageWithAccountButton() {
   // Render de "Account" knop alleen als de huidige locatie niet de "Account" pagina is
   if (location.pathname !== "/pages/Account") {
     return (
-      <div>
-        <Link to="/pages/Account" className="button">
-          Account
-        </Link>
-      </div>
+      <Link to="/pages/Account" className="button">
+        Account
+      </Link>
     );
   }
   return null;
