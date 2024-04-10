@@ -1,44 +1,31 @@
 import React from "react";
 import './Homepage.css';
 import { Link } from "react-router-dom";
-import kiwi from '../img/kiwi.png';
-import watermelon from '../img/watermelon.png';
-import apple from '../img/apple.png';
-import peach from '../img/peach.png';
-import banana from '../img/banana.png';
-import pear from '../img/pear.png';
-import ananas from '../img/ananas.png';
 import logo from '../img/caloriecommander.png';
 
 const Homepage = () => {
     return (
         <div className="Test">
-            <div className="home-navbar">
-                <img src={logo} alt="logo" className="home-logo" />
+            <div className="navbar">
+                <img src={logo} alt="logo" className="logo" />
             </div>
-            <div className="home-line"></div>
-            <img src={ananas} alt="ananas" className="home-fruit-ananas" />
-            <img src={kiwi} alt="kiwi" className="home-fruit-kiwi" />
-            <img src={watermelon} alt="watermelon" className="home-fruit-watermelon" />
-            <img src={peach} alt="peach" className="home-fruit-peach" />
-            <img src={banana} alt="banana" className="home-fruit-banana" />
+            <div className="line"></div>
+            <div className="home-background">
+                <div className="home-tekst1">WELKOM BIJ</div>
+                <div className="home-tekst2">CALORIE COMMANDER</div>
 
-            <img src={pear} alt="pear" className="home-fruit-ananas home-right" />
-            <img src={banana} alt="banana" className="home-fruit-kiwi home-right" />
-            <img src={apple} alt="apple" className="home-fruit-watermelon home-right" />
-            <img src={peach} alt="peach" className="home-fruit-peach home-right" />
-            <img src={kiwi} alt="kiwi" className="home-fruit-banana home-right" />
-            <div className="home-tekst1">WELKOM BIJ</div>
-            <div className="home-tekst2">CALORIE COMMANDER</div>
-            
-            <div className="home-blauw-tekst">Meld je hieronder aan om je leven</div>
-            <div className="home-blauw-tekst2">voorgoed te veranderen!</div>
-            <Link to="/Inloggen" className="home-button">
-                Inloggen
-            </Link>
-            <Link to="/Registreren" className="home-button2">
-                Registreren
-            </Link>
+                <div className="home-blauw-tekst">Meld je hieronder aan om je leven</div>
+                <div className="home-blauw-tekst2">voorgoed te veranderen!</div>
+
+                <div className="buttons-homepage">
+                    <Link to="/Inloggen" className="home-button">
+                        Inloggen
+                    </Link>
+                    <Link to="/Registreren" className="home-button2">
+                        Registreren
+                    </Link>
+                </div>
+            </div>
         </div>
     );
 };
