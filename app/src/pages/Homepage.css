@@ -12,21 +12,6 @@ body {
       monospace;
   }
   
-  
-  /* inlog en registratie aanpassen bij startpagina */
-  .inlogpage {
-    position: absolute;
-    margin-top: 30vw;
-    margin-left: 45vw;
-  }
-  
-  .registratiepage {
-    position: absolute;
-    margin-top: 35vw;
-    margin-left: 45vw;
-  }
-  
-  
   /*navbar bij startpagina aanpassen*/
   .home-navbar {
     background: linear-gradient(to right, #0097B2, #A7C520);
