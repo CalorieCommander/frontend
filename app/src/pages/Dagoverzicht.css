@@ -124,9 +124,25 @@
 .dag-calorie-count {
   position: absolute;
   color: black;
-  font-family: 'Open Sans', sans-serif; 
   font-weight: bold; 
-  font-size: 1.3vw;
-  left: 22.8vw; 
-  top: 4.5vw;
+  font-size: 1.4vw;
+  right: 7.3vw; 
+  top: 6vw;
 } 
+
+.dag-progress-bar {
+  position: absolute;
+  width: 7vw;
+  height: 1vw;
+  background-color: #ddd;
+  border-radius: 0.5vw;
+  border: 0.12vw solid black;
+  bottom: 5.5vw;
+  left: 12.7vw;
+}
+
+.dag-progress-bar-fill {
+  height: 100%;
+  background-color: #0097B2;
+  border-radius: 0.5vw;
+}

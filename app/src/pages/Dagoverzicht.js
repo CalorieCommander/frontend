@@ -7,7 +7,8 @@ import calendar from "../img/calendar.png";
 const Dagoverzicht = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [activityCount, setActivityCount] = useState(0);
-  const [caloriesCount, setCaloriesCount] = useState(0);
+  const [totalMealCalories, setTotalMealCalories] = useState(0);
+  const [dailyCalorieGoal, setDailyCalorieGoal] = useState(0);
 
   // Functie om de tekst voor de datum bij te werken
   const updateDateText = () => {
@@ -41,6 +42,10 @@ const Dagoverzicht = () => {
 
   const [dayName, formattedDate, weekOfMonth] = updateDateText();
 
+  const totalCaloriesGoal = 3000; // Het doel voor totale calorieën
+  const consumedCalories = 1500; // Het aantal geconsumeerde calorieën
+
+  const progressPercentage = (consumedCalories / totalCaloriesGoal) * 100; // Bereken de voortgang in procenten
   return (
     <div className="Test">
       <div className="navbar">
@@ -50,20 +55,26 @@ const Dagoverzicht = () => {
         </a>
       </div>
       <div className="line"></div>
-      <div class="dag-top-border">
-        <span class="dag-vandaag-text">{dayName}</span>
-        <span class="dag-datum-text">{formattedDate}</span>
-        <span class="dag-week-text">Week {weekOfMonth}</span>
+      <div className="dag-top-border">
+        <span className="dag-vandaag-text">{dayName}</span>
+        <span className="dag-datum-text">{formattedDate}</span>
+        <span className="dag-week-text">Week {weekOfMonth}</span>
         <Link to="#">
           <img src={calendar} alt="calendar" className="dag-calendar" />
         </Link>
-        <span class="dag-samenvatting-text">Samenvatting</span>
-        <div class="dag-midden-border">
-          <span class="dag-activiteit">Activiteiten</span>
-          <span class="dag-activiteit-count">{activityCount}</span>
-          <span class="dag-count">{caloriesCount}</span>
-          <span class="dag-doel">Doel</span>
-          <span class="dag-calorie-count">{caloriesCount}</span>
+        <span className="dag-samenvatting-text">Samenvatting</span>
+        <div className="dag-midden-border">
+          <span className="dag-activiteit">Activiteiten</span>
+          <span className="dag-activiteit-count">{activityCount}</span>
+          <span className="dag-count">{totalMealCalories}</span>
+          <div className="dag-progress-bar">
+            <div
+              className="dag-progress-bar-fill"
+              style={{ width: `${progressPercentage}%` }}
+            ></div>
+          </div>
+          <span className="dag-doel">Doel</span>
+          <span className="dag-calorie-count">{dailyCalorieGoal}</span>
         </div>
       </div>
     </div>
