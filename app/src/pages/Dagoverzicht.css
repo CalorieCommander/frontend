@@ -39,4 +39,24 @@
     font-size: 1.3vw;
     left: 25vw; 
     top: 1.5vw; 
-  }
+}
+
+  /* image voor calendar */
+
+.dag-calendar {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    left: 45vw;
+    top: 1vw;
+}
+
+.dag-week-text {
+  position: absolute;
+  color: #666666;
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: bold; 
+  font-size: 1.3vw;
+  right: 2vw; 
+  top: 1.5vw;
+} 
