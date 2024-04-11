@@ -8,7 +8,7 @@
     top: 2.5vw;
     text-decoration: none;
 }
-/* dagoverzicht aanpassingen */
+/* dagoverzicht aanpassingen in de top */
 
 .dag-top-border {
     position: absolute;
@@ -59,4 +59,74 @@
   font-size: 1.3vw;
   right: 2vw; 
   top: 1.5vw;
+} 
+
+.dag-samenvatting-text {
+  position: absolute;
+  color: #666666;
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: bold; 
+  font-size: 1.3vw;
+  left: 23.8vw; 
+  top: 8.5vw;
+} 
+
+.dag-midden-border {
+  position: absolute;
+  width: 32vw; 
+  height: 13vw; 
+  background-color: white;
+  border: 0.3vw solid #666666;
+  border-radius: 2vw; 
+  left: 11.5vw;
+  top: 12vw;
+}
+
+.dag-activiteit {
+  position: absolute;
+  color: black;
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: bold; 
+  font-size: 1.3vw;
+  left: 3.8vw; 
+  top: 3.5vw;
+} 
+
+.dag-activiteit-count {
+  position: absolute;
+  color: black;
+  font-weight: bold; 
+  font-size: 1.4vw;
+  margin-top: 6vw;
+  left: 7vw;
+}
+
+.dag-count {
+  position: absolute;
+  color: black;
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: bold; 
+  font-size: 1.3vw;
+  left: 15.8vw; 
+  top: 3.5vw;
+} 
+
+.dag-doel {
+  position: absolute;
+  color: black;
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: bold; 
+  font-size: 1.3vw;
+  left: 22.8vw; 
+  top: 3.5vw;
+} 
+
+.dag-calorie-count {
+  position: absolute;
+  color: black;
+  font-family: 'Open Sans', sans-serif; 
+  font-weight: bold; 
+  font-size: 1.3vw;
+  left: 22.8vw; 
+  top: 4.5vw;
 } 

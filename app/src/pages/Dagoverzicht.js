@@ -6,6 +6,8 @@ import calendar from "../img/calendar.png";
 
 const Dagoverzicht = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [activityCount, setActivityCount] = useState(0);
+  const [caloriesCount, setCaloriesCount] = useState(0);
 
   // Functie om de tekst voor de datum bij te werken
   const updateDateText = () => {
@@ -55,8 +57,17 @@ const Dagoverzicht = () => {
         <Link to="#">
           <img src={calendar} alt="calendar" className="dag-calendar" />
         </Link>
+        <span class="dag-samenvatting-text">Samenvatting</span>
+        <div class="dag-midden-border">
+          <span class="dag-activiteit">Activiteiten</span>
+          <span class="dag-activiteit-count">{activityCount}</span>
+          <span class="dag-count">{caloriesCount}</span>
+          <span class="dag-doel">Doel</span>
+          <span class="dag-calorie-count">{caloriesCount}</span>
+        </div>
       </div>
     </div>
   );
 };
+
 export default Dagoverzicht;
