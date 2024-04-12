@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../img/caloriecommander.png";
 import calendar from "../img/calendar.png";
 import salad from "../img/salad.png";
+import plus from "../img/plus.png";
 
 const Dagoverzicht = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -82,10 +83,12 @@ const Dagoverzicht = () => {
       <div className="dag-middle-border">
         <img src={salad} alt="salad" className="dag-salad" />
         <div className="dag-maaltijd-toevoeg">Voeg hier je maaltijden toe</div>
-        <div className="dag-maaltijd-text">
-          Voeg nu je eerste
-          <br /> maaltijd toe
-        </div>
+        <div className="dag-maaltijd-text">Voeg nu je eerste</div>
+        <div className="dag-maaltijd-text1">maaltijd toe</div>
+        <button>
+          <img src={plus} alt="plus" className="dag-plus"></img>
+          <div className="dag-meal-button">Toevoegen</div>
+        </button>
       </div>
     </div>
   );
