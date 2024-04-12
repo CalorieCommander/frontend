@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Switch, Route, Routes } from "react-router-dom";
 import './index.css';
 import Homepage from "./pages/Homepage";
 import Inloggen from "./pages/Inloggen";
@@ -8,13 +8,13 @@ import Registreren from "./pages/Registreren";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Switch>
         <Routes>
-        <Route path="" element={<Homepage />} />
-          <Route path="/Inloggen" element={<Inloggen />} />
-          <Route path="/Registreren" element={<Registreren />} />
+        <Route exact path="" element={<Homepage />} />
+          <Route exact path="/Inloggen" element={<Inloggen />} />
+          <Route exact path="/Registreren" element={<Registreren />} />
         </Routes>
-    </BrowserRouter>
+    </Switch>
   );
 }
 

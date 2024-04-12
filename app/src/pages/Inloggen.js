@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import './Inloggen.css';
 import { Link } from "react-router-dom";
 import logo from '../img/caloriecommander.png';
 
 const Inloggen = () => {
+  const [formData, setFormData] = useState({
+    login_email: '',
+    login_pasword: '',
+  });
+  const handleSubmit = async (e) => {
+        console.log(formData)
+    e.preventDefault();
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/auth/login', {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.login_pasword,
+          password: formData.login_password,
+        })
+      });
+      if (!response.ok) {
+        console.log(response);
+      }
+      const jsonData = await response.json();
+      
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
   return (
     <div className="Test">
       <div className="navbar">
@@ -19,11 +47,10 @@ const Inloggen = () => {
       </div>
 
       <div className="login-container">
-        <form action="#" method="post">
-          <input type="email" id="email" name="login-email" placeholder="Jouw E-mail adress" required></input>
-        </form>
-        <form action="#" method="post">
-          <input type="password" id="password" name="login-password" placeholder="Jouw wachtwoord" required></input>
+        <form onSubmit={handleSubmit} method="post">
+          <input type="email" id="email" name="login_email" placeholder="Jouw E-mail adress" onChange={handleChange} required></input>
+          <input type="password" id="password" name="login_password" placeholder="Jouw wachtwoord" onChange={handleChange} required></input>
+          <button type="submit"> Registreren </button>
         </form>
       </div>
 
