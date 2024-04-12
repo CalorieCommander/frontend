@@ -6,7 +6,7 @@ import peach from "./../img/peach.png";
 import banana from "./../img/banana.png";
 import pear from "./../img/pear.png";
 import apple from "./../img/apple.png";
-import "./../index.css";
+import "./../pages/Account.css";
 
 const AccountPage = () => {
   return (
@@ -34,10 +34,13 @@ const AccountPage = () => {
           Lengte:
           <br />
           Gewicht:
+          <br />
+          Doel:
         </div>
         <input className="input4" type="text" placeholder="19" />
         <input className="input5" type="text" placeholder="1.87 meter" />
         <input className="input6" type="text" placeholder="76 kg" />
+        <input className="input7" type="text" placeholder="70 kg" />
         <button className="bewerken">
           <a href="#" className="gegevens-text">
             Gegevens bewerken
