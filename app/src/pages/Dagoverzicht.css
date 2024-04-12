@@ -214,7 +214,15 @@ body{
   top: 20vw;
 }
 
+.dag-plus {
+  width: 1.5vw;
+  margin-right: 0.5vw;
+  fill: white;
+}
+
 .dag-meal-button {
+  display: flex; /* Maakt een flexbox-container */
+  align-items: center; /* Centreert items verticaal */
   position: absolute;
   background-color: #0097B2;
   color: white;
@@ -226,3 +234,5 @@ body{
   top: 24vw;
   left: 11.7vw;
 }
+
+

@@ -85,9 +85,9 @@ const Dagoverzicht = () => {
         <div className="dag-maaltijd-toevoeg">Voeg hier je maaltijden toe</div>
         <div className="dag-maaltijd-text">Voeg nu je eerste</div>
         <div className="dag-maaltijd-text1">maaltijd toe</div>
-        <button>
+        <button className="dag-meal-button">
           <img src={plus} alt="plus" className="dag-plus"></img>
-          <div className="dag-meal-button">Toevoegen</div>
+          <div className="dag-toevoegen">Toevoegen</div>
         </button>
       </div>
     </div>
