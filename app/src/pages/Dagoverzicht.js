@@ -3,6 +3,7 @@ import "./Dagoverzicht.css";
 import { Link } from "react-router-dom";
 import logo from "../img/caloriecommander.png";
 import calendar from "../img/calendar.png";
+import salad from "../img/salad.png";
 
 const Dagoverzicht = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -76,6 +77,10 @@ const Dagoverzicht = () => {
           <span className="dag-doel">Doel</span>
           <span className="dag-calorie-count">{dailyCalorieGoal}</span>
         </div>
+      </div>
+      <div className="dag-maaltijd">Maaltijden</div>
+      <div className="dag-middle-border">
+        <img src={salad} alt="salad" className="dag-salad" />
       </div>
     </div>
   );

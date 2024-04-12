@@ -146,3 +146,33 @@
   background-color: #0097B2;
   border-radius: 0.5vw;
 }
+
+/* editing onder de border aan de top */
+
+.dag-maaltijd {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  color: #666666;
+  font-weight: bold;
+  font-size: 1.5vw;;
+  top: 50vw;
+  left: 25vw;
+}
+
+.dag-middle-border {
+  position: absolute;
+  width: 35vw; 
+  height: 30vw; 
+  background-color: white;
+  border: 0.2vw solid black;
+  border-radius: 10px; 
+  left: 11.5vw;
+  top: 53vw;
+}
+
+.dag-salad {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  left: 10vw;
+}
