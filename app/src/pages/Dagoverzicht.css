@@ -172,7 +172,32 @@
 
 .dag-salad {
   position: absolute;
-  width: 3vw;
-  height: 3vw;
-  left: 10vw;
+  width: 3.5vw;
+  height: 3.5vw;
+  left: 3vw;
+  top: 1.5vw;
+}
+
+.dag-maaltijd-toevoeg {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 1.4vw;
+  left: 9vw;
+  top: 3vw;
+}
+
+.dag-maaltijd-text {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 1.4vw;
+  left: 9vw;
+  top: 13vw;
+}
+
+.dag-maaltijd-text > br {
+  margin-left: -2vw; /* Pas deze waarde aan zoals gewenst */
 }
