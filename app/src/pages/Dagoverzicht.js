@@ -107,7 +107,9 @@ const Dagoverzicht = () => {
         </button>
       </div>
 
-      <div className="dag-middle3-border"></div>
+      <div className="dag-middle3-border">
+        <div className="dag-maaltijd2-toevoeg">Vandaag gegeten</div>
+      </div>
     </div>
   );
 };
