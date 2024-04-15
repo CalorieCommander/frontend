@@ -6,6 +6,7 @@ import calendar from "../img/calendar.png";
 import salad from "../img/salad.png";
 import plus from "../img/plus.png";
 import jogging from "../img/exercise.png";
+import apple from "../img/apple.png";
 
 const Dagoverzicht = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -109,6 +110,10 @@ const Dagoverzicht = () => {
 
       <div className="dag-middle3-border">
         <div className="dag-maaltijd2-toevoeg">Vandaag gegeten</div>
+        <div className="dag-little-border">
+          <img src={apple} alt="dag-apple" className="dag-apple"></img>
+          <div className="dag-apple-text">Appel</div>
+        </div>
       </div>
 
       <div className="dag-middle4-border">

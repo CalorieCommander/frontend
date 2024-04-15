@@ -22,7 +22,7 @@ body{
     height: 30vw; 
     background-color: white;
     border: 0.2vw solid black;
-    border-radius: 10px; 
+    border-radius: 2vw; 
     left: 21.5vw;
     top: 12vw;
   }
@@ -171,7 +171,7 @@ body{
   height: 30vw; 
   background-color: white;
   border: 0.2vw solid black;
-  border-radius: 10px; 
+  border-radius: 2vw; 
   left: 11.5vw;
   top: 53vw;
 }
@@ -221,8 +221,8 @@ body{
 }
 
 .dag-meal-button {
-  display: flex; /* Maakt een flexbox-container */
-  align-items: center; /* Centreert items verticaal */
+  display: flex; 
+  align-items: center; 
   position: absolute;
   background-color: #0097B2;
   color: white;
@@ -253,7 +253,7 @@ body{
   height: 30vw; 
   background-color: white;
   border: 0.2vw solid black;
-  border-radius: 10px; 
+  border-radius: 2vw; 
   left: 55.5vw;
   top: 53vw;
 }
@@ -319,7 +319,7 @@ body{
   height: 30vw; 
   background-color: white;
   border: 0.2vw solid black;
-  border-radius: 10px; 
+  border-radius: 2vw; 
   left: 11.5vw;
   top: 90vw;
 }
@@ -334,6 +334,26 @@ body{
   top: 3vw;
 }
 
+/* eten toevoegen in derde border */
+
+.dag-little-border {
+  position: absolute;
+  width: 20vw; 
+  height: 3.5vw; 
+  background-color: white;
+  border: 0.2vw solid black;
+  border-radius: 1.5vw; 
+  left: 6.5vw;
+  top: 6.5vw;
+}
+
+.dag-apple {
+  position: absolute;	
+  width: 2.5vw;
+  top: 0.5vw;
+  left: 1vw;
+}
+
 /* vierde border editen */
 
 .dag-middle4-border {
@@ -342,7 +362,7 @@ body{
   height: 30vw; 
   background-color: white;
   border: 0.2vw solid black;
-  border-radius: 10px; 
+  border-radius: 2vw; 
   left: 55.5vw;
   top: 90vw;
 }
