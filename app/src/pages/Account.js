@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ananas from "./../img/fruit.png";
 import kiwi from "./../img/kiwi.png";
 import watermelon from "./../img/watermelon.png";
@@ -9,8 +9,33 @@ import apple from "./../img/apple.png";
 import "./../pages/Account.css";
 
 const AccountPage = () => {
+  const [showPopup, setShowPopup] = useState(false); // Staat om bij te houden of de pop-up moet worden weergegeven
+
+  const openPopup = () => {
+    setShowPopup(true); // Stel de staat in om de pop-up weer te geven wanneer de knop wordt geklikt
+  };
+
+  const closePopup = () => {
+    setShowPopup(false); // Stel de staat in om de pop-up te verbergen wanneer er buiten de pop-up wordt geklikt
+  };
+
   return (
     <div>
+      <button className="account-button1" onClick={openPopup}>
+        pop up
+      </button>
+
+      <div
+        className={`overlay ${showPopup ? "show" : ""}`}
+        id="overlay"
+        onClick={closePopup}
+      >
+        <div className="popup" onClick={(e) => e.stopPropagation()}>
+          <h2>Dit is een pop-up!</h2>
+          <p>Hier kun je je inhoud plaatsen.</p>
+        </div>
+      </div>
+
       <div className="border">
         <div className="name">cerchio</div>
         <div className="gegevens">Gegevens</div>

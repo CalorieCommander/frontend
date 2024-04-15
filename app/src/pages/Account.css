@@ -1,5 +1,48 @@
+.account-button1 {
+  position: absolute;
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  font-size: 1vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 1vw;
+  transition: background-color 0.3s ease;
+  left: 50vw;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparante achtergrond */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Zorg ervoor dat de overlay bovenop alles wordt weergegeven */
+}
+
+.overlay.show {
+  display: flex; /* of display: block; of display: grid; afhankelijk van je lay-out */
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Schaduw voor de pop-up */
+  max-width: 80%;
+}
 
 /* hier komen de aanpassingen voor de accountinstellingen */
+
+.button-button1:hover {
+  background-color: #45a049;
+}
+
 
 .border {
     width: 35vw; 
