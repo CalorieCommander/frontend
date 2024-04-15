@@ -32,19 +32,21 @@ const AccountPage = () => {
       <div className="border">
         <div className="name">cerchio</div>
         <div className="gegevens">Gegevens</div>
-        <div className="gegevens-test">
+        <div className="gegevens-test1">
           <div className="naam">
             naam:
-            <input className="input" type="text" placeholder="Cerchio" />
           </div>
           <div className="email">
             email:
-            <input className="input" type="text" placeholder="jojo@gmail.com" />
           </div>
           <div className="geslacht">
             geslacht:
-            <input className="input" type="text" placeholder="Man" />
           </div>
+        </div>
+        <div className="gegevens-test2">
+          <input className="input" type="text" placeholder="Cerchio" />
+          <input className="input" type="text" placeholder="jojo@gmail.com" />
+          <input className="input" type="text" placeholder="Man" />
         </div>
         
         

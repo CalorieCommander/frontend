@@ -83,7 +83,7 @@ body{
     font-weight: 800; 
   }
   
-  .gegevens-test {
+  .gegevens-test1 {
     position: absolute;
     top: 22%; 
     left: 10%; 
@@ -91,20 +91,29 @@ body{
     color: #000000; 
     font-family: 'Open Sans', sans-serif; 
     line-height: 3;
+}
+
+  .gegevens-test2 {
+    position: absolute;
+    top: 35%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  
-  
+
 /* de placeholder tekst in het midden */
-  input[type="text"] {
+input[type="text"] {
     text-align: center; 
-  }
-  
-  .input {
+}
+
+.input {
     width: 8vw;
     height: 1.5vw; 
     background-color: #ffffff; 
     border: 0.1vw solid #000000; 
-  }
+    display: block; /* Change from inline to block */
+    margin-top: 0.5vw; /* Add margin to separate inputs */
+}
+
   
   .password-link {
     position: absolute;
