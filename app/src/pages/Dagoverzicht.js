@@ -110,6 +110,10 @@ const Dagoverzicht = () => {
       <div className="dag-middle3-border">
         <div className="dag-maaltijd2-toevoeg">Vandaag gegeten</div>
       </div>
+
+      <div className="dag-middle4-border">
+        <div className="dag-activiteit2-toevoeg">Vandaag gegeten</div>
+      </div>
     </div>
   );
 };

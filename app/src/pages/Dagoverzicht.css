@@ -297,8 +297,8 @@ body{
 }
 
 .dag-activity-button {
-  display: flex; /* Maakt een flexbox-container */
-  align-items: center; /* Centreert items verticaal */
+  display: flex; 
+  align-items: center;
   position: absolute;
   background-color: #0097B2;
   color: white;
@@ -322,4 +322,37 @@ body{
   border-radius: 10px; 
   left: 11.5vw;
   top: 90vw;
+}
+
+.dag-maaltijd2-toevoeg {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 1.4vw;
+  left: 11vw;
+  top: 3vw;
+}
+
+/* vierde border editen */
+
+.dag-middle4-border {
+  position: absolute;
+  width: 35vw; 
+  height: 30vw; 
+  background-color: white;
+  border: 0.2vw solid black;
+  border-radius: 10px; 
+  left: 55.5vw;
+  top: 90vw;
+}
+
+.dag-activiteit2-toevoeg {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 1.4vw;
+  left: 11vw;
+  top: 3vw;
 }
