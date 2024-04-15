@@ -5,6 +5,7 @@ import logo from "../img/caloriecommander.png";
 import calendar from "../img/calendar.png";
 import salad from "../img/salad.png";
 import plus from "../img/plus.png";
+import jogging from "../img/exercise.png";
 
 const Dagoverzicht = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -79,6 +80,7 @@ const Dagoverzicht = () => {
           <span className="dag-calorie-count">{dailyCalorieGoal}</span>
         </div>
       </div>
+
       <div className="dag-maaltijd">Maaltijden</div>
       <div className="dag-middle-border">
         <img src={salad} alt="salad" className="dag-salad" />
@@ -90,6 +92,22 @@ const Dagoverzicht = () => {
           <div className="dag-toevoegen">Toevoegen</div>
         </button>
       </div>
+
+      <div className="dag-Activiteit">Activiteit</div>
+      <div className="dag-middle2-border">
+        <img src={jogging} alt="jogging" className="dag-jogging"></img>
+        <div className="dag-activiteit-toevoeg">
+          Houd hier je activiteit bij
+        </div>
+        <div className="dag-activiteit-text">Klik hier om je activiteit te</div>
+        <div className="dag-activiteit-text1">voegen</div>
+        <button className="dag-activity-button">
+          <img src={plus} alt="plus" className="dag-plus"></img>
+          <div className="dag-toevoegen">Toevoegen</div>
+        </button>
+      </div>
+
+      <div className="dag-middle3-border"></div>
     </div>
   );
 };
