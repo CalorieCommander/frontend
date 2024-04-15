@@ -49,7 +49,7 @@ const Registreren = () => {
       </div>
       <div className="line"></div>
 
-      <div className="text">
+      <div className="register-text">
         REGISTREREN
       </div>
 

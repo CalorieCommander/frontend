@@ -1,34 +1,37 @@
 import React, { useState } from "react";
 import './Inloggen.css';
-import { Link } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 import logo from '../img/caloriecommander.png';
 
 const Inloggen = () => {
+  let navigate = useNavigate();
   const [formData, setFormData] = useState({
     login_email: '',
-    login_pasword: '',
+    login_password: '',
   });
   const handleSubmit = async (e) => {
-        console.log(formData)
     e.preventDefault();
     try {
       const response = await fetch('http://127.0.0.1:8000/api/auth/login', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email: formData.login_pasword,
+          email: formData.login_email,
           password: formData.login_password,
         })
       });
       if (!response.ok) {
         console.log(response);
       }
+
       const jsonData = await response.json();
-      
+      localStorage.setItem('token', jsonData.access_token);
+      navigate("/Accountpagina");
     } catch (error) {
       console.log(error);
     }
   }
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -42,7 +45,7 @@ const Inloggen = () => {
       </div>
       <div className="line"></div>
 
-      <div className="text">
+      <div className="login-text">
         INLOGGEN
       </div>
 
@@ -53,10 +56,6 @@ const Inloggen = () => {
           <button type="submit"> Registreren </button>
         </form>
       </div>
-
-      <Link to="/Inloggen" className="login-button">
-        Inloggen
-      </Link>
     </div>
   );
 };

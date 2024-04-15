@@ -13,15 +13,7 @@ body {
   }
   
   /*navbar bij startpagina aanpassen*/
-  
-  .home{
-    position: absolute;
-    color: white;
-    padding-left: 85vw;
-    padding-top: 1.3vw;
-  }
-  
-  .text{
+  .register-text{
     margin-top: 50px;
     font-family: Horizon, sans-serif; 
     color: #A7C521; 

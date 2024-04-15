@@ -1,0 +1,190 @@
+.name-corner {
+    position: absolute;
+    color: #E5FFD0;
+    font-family: 'HORIZON', sans-serif;
+    font-weight: 800;
+    left: 90vw;
+    top: 3vw;
+  }
+  
+  /* hier komen de aanpassingen voor de accountinstellingen */
+  
+  .account-border {
+    width: 35vw; 
+    height: 80vh; 
+    border: 2px solid #000000; 
+    border-radius: 20px; 
+    margin: 10vh auto; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .account-name {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px; 
+    color: #000000; 
+    font-family: Arial, sans-serif; 
+    font-weight: 800;
+  }
+  
+  .account-gegevens {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: 1.3vw; 
+    color: #000000; 
+    font-family: 'Canva Sans', sans-serif; 
+    font-weight: 800; 
+  }
+  
+  .account-naam {
+    position: absolute;
+    top: 10%; 
+    left: 10%; 
+    font-size: 1vw; 
+    color: #000000; 
+    font-family: 'Open Sans', sans-serif; 
+    line-height: 3;
+  }
+  
+  /* de placeholder tekst in het midden */
+  input[type="text"] {
+    text-align: center; 
+  }
+  
+  .account-firstname {
+    position: absolute;
+    top: 5vw;
+    left: 13.5vw; 
+    width: 8vw;
+    height: 1.5vw; 
+    background-color: #ffffff; 
+    border: 0.1vw solid #000000; 
+  }
+  .account-lastname {
+    position: absolute;
+    top: 8vw;
+    left: 13.5vw; 
+    width: 8vw;
+    height: 1.5vw; 
+    background-color: #ffffff; 
+    border: 0.1vw solid #000000; 
+  }
+  
+  .account-email {
+    position: absolute;
+    top: 11vw; 
+    left: 13.5vw; 
+    width: 8vw;
+    height: 1.5vw;
+    background-color: #ffffff;
+    border: 0.1vw solid #000000;
+  }
+  
+  .account-gender {
+    position: absolute;
+    top: 14vw; 
+    left: 13.5vw; 
+    width: 8vw;
+    height: 1.5vw;
+    background-color: #ffffff;
+    border: 0.1vw solid #000000;
+  }
+  
+  .account-password-link {
+    position: absolute;
+    top: 17vw; 
+    left: 3.5vw; 
+    font-family: 'Wachtwoord veranderen', sans-serif; 
+    font-size: 1.2vw; 
+    color: #0097B2; 
+    text-decoration: underline; 
+  }
+  
+  .account-BMI {
+    position: absolute;
+    top: 48%;
+    left: 10%;
+    font-size: 1.3vw; 
+    color: #000000; 
+    font-family: 'Canva Sans', sans-serif; 
+    font-weight: 800; 
+  }
+  
+  .account-bmi-gegevens {
+    position: absolute;
+    top: 52%; 
+    left: 10%; 
+    font-size: 1vw; 
+    color: #000000; 
+    font-family: 'Open Sans', sans-serif; 
+    line-height: 3;
+  }
+  
+  .account_age {
+    position: absolute;
+    top: 22vw;
+    left: 13.5vw; 
+    width: 8vw;
+    height: 1.5vw; 
+    background-color: #ffffff; 
+    border: 0.1vw solid #000000; 
+  }
+  
+  .account_length {
+    position: absolute;
+    top: 25vw;
+    left: 13.5vw; 
+    width: 8vw;
+    height: 1.5vw; 
+    background-color: #ffffff; 
+    border: 0.1vw solid #000000; 
+  }
+  
+  .account_weight {
+    position: absolute;
+    top: 28vw;
+    left: 13.5vw; 
+    width: 8vw;
+    height: 1.5vw; 
+    background-color: #ffffff; 
+    border: 0.1vw solid #000000; 
+  }
+  
+  .account-bewerken {
+    position: relative;
+    background: linear-gradient(to right, #0097B2, #A7C520);
+    width: 15vw;
+    height: 3vw;
+    border-radius: 10vw;
+    top: 32vw;
+    left: 10.5vw;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .account-gegevens-text {
+    position: absolute;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.4vw;
+    left: 1.2vw;
+    top: 0.8vw;
+  }
+  
+  .account-verwijderen-text {
+    position: absolute;
+    color: #eb4034; /* Kleur #E5FFD0 */
+    font-family: 'HORIZON', sans-serif; /* Lettertype HORIZON */
+    font-weight: bold; /* Maak de tekst bold */
+    text-decoration: none;
+    font-size: 1.2vw;
+    top: 37vw; /* Aanpassen aan gewenste positie */
+    left: 12vw; /* Aanpassen aan gewenste positie */
+  }
+  
