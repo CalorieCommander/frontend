@@ -1,3 +1,9 @@
+body{
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .account-button1 {
   position: absolute;
   display: inline-block;
@@ -77,7 +83,7 @@
     font-weight: 800; 
   }
   
-  .naam {
+  .gegevens-test {
     position: absolute;
     top: 22%; 
     left: 10%; 
@@ -89,38 +95,15 @@
   
   
 /* de placeholder tekst in het midden */
-input[type="text"] {
+  input[type="text"] {
     text-align: center; 
   }
   
-  .input1 {
-    position: absolute;
-    top: 10vw;
-    left: 13.5vw; 
+  .input {
     width: 8vw;
     height: 1.5vw; 
     background-color: #ffffff; 
     border: 0.1vw solid #000000; 
-  }
-  
-  .input2 {
-    position: absolute;
-    top: 13vw; 
-    left: 13.5vw; 
-    width: 8vw;
-    height: 1.5vw;
-    background-color: #ffffff;
-    border: 0.1vw solid #000000;
-  }
-  
-  .input3 {
-    position: absolute;
-    top: 16vw; 
-    left: 13.5vw; 
-    width: 8vw;
-    height: 1.5vw;
-    background-color: #ffffff;
-    border: 0.1vw solid #000000;
   }
   
   .password-link {
