@@ -103,7 +103,7 @@ const Dagoverzicht = () => {
         <div className="dag-activiteit-text1">voegen</div>
         <button className="dag-activity-button">
           <img src={plus} alt="plus" className="dag-plus"></img>
-          <div className="dag-toevoegen">Toevoegen</div>
+          <div className="dag-toevoegen">Toevoegend</div>
         </button>
       </div>
 
