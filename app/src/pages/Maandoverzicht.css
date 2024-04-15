@@ -7,6 +7,7 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
   }
 
   code {
@@ -40,141 +41,41 @@ body {
 	--c-text-secondary: #999FA6;
 }
 
-button {
-	font: inherit;
-	cursor: pointer;
-	&:focus {
-		outline: 0;
-	}
+.account-button1 {
+  position: absolute;
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  font-size: 1vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 1vw;
+  transition: background-color 0.3s ease;
+  left: 50vw;
 }
 
-
-.datepicker {
-    position: absolute;
-    margin-top: 100px;
-	width: 95%;
-	max-width: 350px;
-	border-radius: 10px;
-	box-shadow: 0 0 2px 0 rgba(#000, .2), 0 5px 10px 0 rgba(#000, .1);
-	padding: 1rem;
-    top: 40%; /* Position the container 50% from the top */
-    left: 50%; /* Position the container 50% from the left */
-    transform: translate(-50%, -50%); /* Move the container back by half its own width and height */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparante achtergrond */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Zorg ervoor dat de overlay bovenop alles wordt weergegeven */
 }
 
-.datepicker-top {
-	margin-bottom: 1rem;
+.overlay.show {
+  display: flex; /* of display: block; of display: grid; afhankelijk van je lay-out */
 }
 
-.btn-group {
-	display: flex;
-	flex-wrap: wrap;
-	margin-bottom: 1rem;
-	margin-top: -.5rem;
-}
-
-.tag {
-	margin-right: .5rem;
-	margin-top: .5rem;
-	border: 0;
-	background-color: var(--c-bg-secondary);
-	border-radius: 10px;
-	padding: .5em .75em;
-	font-weight: 600;
-}
-
-.month-selector {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.arrow {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 0;
-	background-color:#FFF;
-	border-radius: 12px;
-	width: 2.5rem;
-	height: 2.5rem;
-	box-shadow: 0 0 2px 0 rgba(#000,.25), 0 0 10px 0 rgba(#000, .15);
-}
-
-.month-name {
-	font-weight: 600;
-}
-
-.datepicker-calendar {
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	grid-row-gap: 1rem;
-}
-
-.day, .date {
-	justify-self: center;
-}
-
-.day {
-	color: var(--c-text-secondary);
-	font-size: .875em;
-	font-weight: 500;
-	justify-self: center;
-}
-
-.date {
-	border: 0;
-	padding: 0;
-	width: 2.25rem;
-	height: 2.25rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 6px;
-	font-weight: 600;
-	border: 2px solid transparent;
-	background-color: transparent;
-	cursor: pointer;
-	&:focus {
-		outline: 0;
-		color: var(--c-theme-primary);
-		border: 2px solid var(--c-theme-primary-accent);	
-	}	
-}
-
-.faded {
-	color: var(--c-text-secondary);
-}
-
-.current-day {
-	color: #FFF;
-	border-color: var(--c-theme-primary);
-	background-color: var(--c-theme-primary);
-	&:focus {
-		background-color: var(--c-theme-primary-accent);
-	}
-}
-
-.maandoverzicht-button{
-    margin-top: 400px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(to right, #A7C520, #0097B2); 
-    color: white;
-    padding: 1.5vw 7vw; 
-    border-radius: 20vw; 
-    border: none; 
-    cursor: pointer; 
-    font-size: 1vw;
-    text-decoration: none;
-}
-
-.month-change {
-    font-size: 1.5rem;
-    color: black;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease;
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Schaduw voor de pop-up */
+  max-width: 80%;
 }

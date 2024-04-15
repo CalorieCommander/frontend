@@ -5,6 +5,9 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: url("../img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   code {
@@ -14,6 +17,7 @@ body {
   
   /*navbar bij startpagina aanpassen*/
   /* tekst editing startpage */
+
   .home-tekst1 {
     font-family: Horizon, sans-serif; 
     color: #A7C521; 

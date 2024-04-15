@@ -1,9 +1,18 @@
-import React from "react";
 import './Maandoverzicht.css';
 import { Link } from "react-router-dom";
 import logo from '../img/caloriecommander.png';
+import React, { useState } from "react";
 
 const Maandoverzicht = () => {
+    const [showPopup, setShowPopup] = useState(false); // Staat om bij te houden of de pop-up moet worden weergegeven
+
+    const openPopup = () => {
+        setShowPopup(true); // Stel de staat in om de pop-up weer te geven wanneer de knop wordt geklikt
+    };
+
+    const closePopup = () => {
+        setShowPopup(false); // Stel de staat in om de pop-up te verbergen wanneer er buiten de pop-up wordt geklikt
+    };
     return (
         <div className="Test">
             <div className="navbar">
@@ -14,6 +23,22 @@ const Maandoverzicht = () => {
             </div>
             <div className="line"></div>
 
+            <button className="account-button1" onClick={openPopup}>
+                pop up
+            </button>
+
+            <div
+                className={`overlay ${showPopup ? "show" : ""}`}
+                id="overlay"
+                onClick={closePopup}
+            >
+                <div className="popup" onClick={(e) => e.stopPropagation()}>
+                    <h2>Dit is een pop-up!</h2>
+                    <p>Hier kun je je inhoud plaatsen.</p>
+                </div>
+            </div>
+
+
             <div className="maand-text">
                 MAANDOVERZICHT
             </div>
@@ -22,65 +47,12 @@ const Maandoverzicht = () => {
                 <div className="maandoverzicht-text">Dit is uw maandoverzicht</div>
             </div>
 
-            <div class="datepicker">
-                <div class="datepicker-top">
-                    <div class="month-selector">
-                        <span class="month-name">December 2020</span>
-                        <button class="month-change">◄</button>
-                        <button class="month-change">►</button>
-                    </div>
-                </div>
-                <div class="datepicker-calendar">
-                    <span class="day">Mo</span>
-                    <span class="day">Tu</span>
-                    <span class="day">We</span>
-                    <span class="day">Th</span>
-                    <span class="day">Fr</span>
-                    <span class="day">Sa</span>
-                    <span class="day">Su</span>
-                    <button class="date faded">30</button>
-                    <button class="date">1</button>
-                    <button class="date">2</button>
-                    <button class="date">3</button>
-                    <button class="date">4</button>
-                    <button class="date">5</button>
-                    <button class="date">6</button>
-                    <button class="date">7</button>
-                    <button class="date">8</button>
-                    <button class="date current-day">9</button>
-                    <button class="date">10</button>
-                    <button class="date">11</button>
-                    <button class="date">12</button>
-                    <button class="date">13</button>
-                    <button class="date">14</button>
-                    <button class="date">15</button>
-                    <button class="date">16</button>
-                    <button class="date">17</button>
-                    <button class="date">18</button>
-                    <button class="date">19</button>
-                    <button class="date">20</button>
-                    <button class="date">21</button>
-                    <button class="date">22</button>
-                    <button class="date">23</button>
-                    <button class="date">24</button>
-                    <button class="date">25</button>
-                    <button class="date">26</button>
-                    <button class="date">27</button>
-                    <button class="date">28</button>
-                    <button class="date">29</button>
-                    <button class="date">30</button>
-                    <button class="date">31</button>
-                    <button class="date faded">1</button>
-                    <button class="date faded">2</button>
-                    <button class="date faded">3</button>
-                </div>
-            </div>
 
 
-            <Link to="/" className="maandoverzicht-button">
-                Terug naar vandaag
-            </Link>
-        </div>
+        </div >
+
     );
+
 };
+
 export default Maandoverzicht;

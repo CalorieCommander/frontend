@@ -5,7 +5,7 @@ import logo from '../img/caloriecommander.png';
 
 const Homepage = () => {
     return (
-        <div className="Test">
+        <div className="homepage">
             <div className="navbar">
                 <img src={logo} alt="logo" className="logo" />
             </div>
@@ -16,6 +16,7 @@ const Homepage = () => {
 
                 <div className="home-blauw-tekst">Meld je hieronder aan om je leven</div>
                 <div className="home-blauw-tekst2">voorgoed te veranderen!</div>
+
 
                 <div className="buttons-homepage">
                     <Link to="/Inloggen" className="home-button">
