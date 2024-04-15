@@ -14,60 +14,68 @@ const AccountPage = () => {
 
   return (
     <div>
-      <button className="account-button1" onClick={openPopup}>
-        pop up
-      </button>
-
       <div
         className={`overlay ${showPopup ? "show" : ""}`}
         id="overlay"
         onClick={closePopup}
       >
         <div className="popup" onClick={(e) => e.stopPropagation()}>
-          <h2>Dit is een pop-up!</h2>
-          <p>Hier kun je je inhoud plaatsen.</p>
+          <div className="ww-container">
+            <form action="#" method="post">
+              <input type="password" id="password" name="login-password" placeholder="Nieuw wachtwoord" required></input>
+            </form>
+            <form action="#" method="post">
+              <input type="password" id="password2" name="login-password" placeholder="Nieuw wachtwoord herhalen" required></input>
+            </form>
+
+            <button className="wwopslaan">
+              <a href="#" className="wwopslaan-text">
+                Nieuw wachtwoord opslaan
+              </a>
+            </button>
+          </div>
         </div>
       </div>
+
 
       <div className="border">
         <div className="name">cerchio</div>
         <div className="gegevens">Gegevens</div>
-        <div className="gegevens-test1">
-          <div className="naam">
-            naam:
-          </div>
-          <div className="email">
-            email:
-          </div>
-          <div className="geslacht">
-            geslacht:
-          </div>
+
+
+        <div className="gegevens-1">
+          <div className="naam">naam:</div>
+          <div className="email">email:</div>
+          <div className="geslacht">geslacht:</div>
         </div>
-        <div className="gegevens-test2">
+
+
+        <div className="gegevens-2">
           <input className="input" type="text" placeholder="Cerchio" />
           <input className="input" type="text" placeholder="jojo@gmail.com" />
           <input className="input" type="text" placeholder="Man" />
         </div>
-        
-        
-        
-        <a className="password-link" href="#">
+
+        <button className="password-link" onClick={openPopup}>
           Wachtwoord veranderen
-        </a>
+        </button>
         <div className="BMI">BMI</div>
-        <div className="bmi-gegevens">
-          Leeftijd:
-          <br />
-          Lengte:
-          <br />
-          Gewicht:
-          <br />
-          Doel:
+
+
+        <div className="gegevens-3">
+          <div className="leeftijd">Leeftijd:</div>
+          <div className="lengte">Lengte:</div>
+          <div className="gewicht">Gewicht:</div>
+          <div className="doel-gewicht">Doel gewicht:</div>
         </div>
-        <input className="input4" type="text" placeholder="19" />
-        <input className="input5" type="text" placeholder="1.87 meter" />
-        <input className="input6" type="text" placeholder="76 kg" />
-        <input className="input7" type="text" placeholder="70 kg" />
+
+
+        <div className="gegevens-4">
+          <input className="input" type="text" placeholder="19" />
+          <input className="input" type="text" placeholder="1.87 meter" />
+          <input className="input" type="text" placeholder="76 kg" />
+          <input className="input" type="text" placeholder="70 kg" />
+        </div>
         <button className="bewerken">
           <a href="#" className="gegevens-text">
             Gegevens bewerken

@@ -57,7 +57,7 @@ body{
     border-radius: 20px; 
     margin: 10vh auto; 
     position: absolute;
-    top: 60%;
+    top: 49%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -83,19 +83,19 @@ body{
     font-weight: 800; 
   }
   
-  .gegevens-test1 {
+  .gegevens-1 {
     position: absolute;
     top: 22%; 
     left: 10%; 
     font-size: 1vw; 
     color: #000000; 
     font-family: 'Open Sans', sans-serif; 
-    line-height: 3;
+    line-height: 2.2;
 }
 
-  .gegevens-test2 {
+  .gegevens-2 {
     position: absolute;
-    top: 35%; 
+    top: 30%; 
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -117,8 +117,9 @@ input[type="text"] {
   
   .password-link {
     position: absolute;
-    top: 19vw; 
-    left: 3.5vw; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 45%;
     font-family: 'Wachtwoord veranderen', sans-serif; 
     font-size: 1.2vw; 
     color: #0097B2; 
@@ -135,69 +136,38 @@ input[type="text"] {
     font-weight: 800; 
   }
   
-  .bmi-gegevens {
+  .gegevens-3 {
     position: absolute;
     top: 58%; 
     left: 10%; 
     font-size: 1vw; 
     color: #000000; 
     font-family: 'Open Sans', sans-serif; 
-    line-height: 3;
+    line-height: 2.4;
+  }
+  .gegevens-4{
+    position: absolute;
+    top: 70%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
-  .input4 {
+  .bewerken,
+  .wwopslaan {
     position: absolute;
-    top: 25.5vw;
-    left: 13.5vw; 
-    width: 8vw;
-    height: 1.5vw; 
-    background-color: #ffffff; 
-    border: 0.1vw solid #000000; 
-  }
-  
-  .input5 {
-    position: absolute;
-    top: 28.5vw;
-    left: 13.5vw; 
-    width: 8vw;
-    height: 1.5vw; 
-    background-color: #ffffff; 
-    border: 0.1vw solid #000000; 
-  }
-  
-  .input6 {
-    position: absolute;
-    top: 31.5vw;
-    left: 13.5vw; 
-    width: 8vw;
-    height: 1.5vw; 
-    background-color: #ffffff; 
-    border: 0.1vw solid #000000; 
-  }
-
-  .input7 {
-    position: absolute;
-    top: 34.5vw;
-    left: 13.5vw; 
-    width: 8vw;
-    height: 1.5vw; 
-    background-color: #ffffff; 
-    border: 0.1vw solid #000000; 
-  }
-  
-  .bewerken {
-    position: relative;
     background: linear-gradient(to right, #0097B2, #A7C520);
     width: 15vw;
     height: 3vw;
     border-radius: 10vw;
-    top: 36.5vw;
-    left: 10.5vw;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: none;
     cursor: pointer;
   }
   
-  .gegevens-text {
+  .gegevens-text,
+  .wwopslaan-text {
     position: absolute;
     color: #ffffff;
     text-decoration: none;
@@ -208,102 +178,54 @@ input[type="text"] {
   
   .verwijderen-text {
     position: absolute;
-    color: #eb4034; /* Kleur #E5FFD0 */
-    font-family: 'HORIZON', sans-serif; /* Lettertype HORIZON */
-    font-weight: bold; /* Maak de tekst bold */
+    color: #eb4034; 
+    font-family: 'HORIZON', sans-serif; 
+    font-weight: bold; 
     text-decoration: none;
     font-size: 1.2vw;
-    top: 41vw; /* Aanpassen aan gewenste positie */
-    left: 12vw; /* Aanpassen aan gewenste positie */
+    top: 96%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  
 
-/* alle fruit icons aanpassen bij startpagina */
-
-.fruit-ananas {
-    margin-top: 5vw;
-    margin-left: 5vw;
-    width: 7vw;
-    transform: rotate(-10deg);
-  }
-  
-  .fruit-kiwi {
-    width: 7vw;
-    padding-top: 12vw;
-    padding-left: 13vw;
-    transform: rotate(+10deg);
-  }
-  
-  .fruit-watermelon {
-    width: 5vw;
-    padding-top: 21vw;
-    padding-left: 4vw;
-    transform: rotate(-10deg);
-  }
-  
-  .fruit-peach {
-    width: 5vw;
-    padding-top: 27vw;
-    padding-left: 13vw;
-  }
-  
-  .fruit-banana {
-    width: 6vw;
-    padding-top: 35vw;
-    padding-left: 5vw;
-  }
-  
-  .fruit-pear {
-    width: 6vw;
-    padding-top: 40vw;
-    padding-left: 12.5vw;
-  }
-  
-  .fruit-apple {
-    width: 6vw;
-    padding-top: 48vw;
-    transform: rotate(-10deg);
-  }
-  
-  .fruit-ananas, .fruit-kiwi, .fruit-watermelon, .fruit-peach, .fruit-banana, .fruit-pear, .fruit-apple {
+  .ww-container {
+    background-image: url("../img/popup.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #f9f9f9;
+    width: 700px;
+    height: 500px;
     position: absolute;
+    top: 45%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    border: 2px solid #000000; 
+    border-radius: 20px;
   }
-  
-  /* fruit icons aan de rechterkant aanpassen */
-  
-  .right {
-    right: 10vw;
+
+  input[id="password"],
+  input[id="password2"]{
+    position: absolute;
+    top: 55%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    flex: 1;
+    width: 250px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    outline: none;
   }
-  
-  .fruit-pear.right {
-   right: 2.5vw;
+
+  input[id="password2"]{
+    top: 43%;
   }
-  
-  .fruit-kiwi.right {
-    top: 7vw;
-    right: 1vw;
+
+  .wwopslaan{
+    top: 70%;
   }
-  
-  .fruit-watermelon.right {
-    top: 8vw;
-    right: 13vw;
-  }
-  
-  .fruit-peach.right {
-    top: 8vw;
-    right: 3vw;
-  }
-  
-  .fruit-banana.right {
-    right: 12vw;
-  }
-  
-  .fruit-ananas.right {
-    width: 6vw;
-  }
-  
-  .fruit-apple.right {
-    right: 15vw;
+  .wwopslaan-text{
+    font-size: 1vw;
   }
   
     
