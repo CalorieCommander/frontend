@@ -16,7 +16,7 @@ const Dagoverzicht = () => {
   // Functie om de tekst voor de datum bij te werken
   const updateDateText = () => {
     const days = [
-      "Zondag",
+      "Zondag3333",
       "Maandag",
       "Dinsdag",
       "Woensdag",
