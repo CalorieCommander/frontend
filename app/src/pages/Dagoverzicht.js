@@ -7,6 +7,8 @@ import salad from "../img/salad.png";
 import plus from "../img/plus.png";
 import jogging from "../img/exercise.png";
 import apple from "../img/apple.png";
+import plus2 from "../img/plus2.png";
+import jogging2 from "../img/jogging.png";
 
 const Dagoverzicht = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -113,11 +115,18 @@ const Dagoverzicht = () => {
         <div className="dag-little-border">
           <img src={apple} alt="dag-apple" className="dag-apple"></img>
           <div className="dag-apple-text">Appel</div>
+          <div className="dag-apple-info">260 kcal Portie (200 gram)</div>
+          <button className="dag-button">
+            <img src={plus2} alt="dag-plus2" className="dag-plus2"></img>
+          </button>
         </div>
       </div>
 
       <div className="dag-middle4-border">
         <div className="dag-activiteit2-toevoeg">Vandaag gegeten</div>
+        <div className="dag-little2-border">
+          <img src={jogging2} alt="dag-jogging2" className="dag-jogging2"></img>
+        </div>
       </div>
     </div>
   );

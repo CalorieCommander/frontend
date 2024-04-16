@@ -354,6 +354,47 @@ body{
   left: 1vw;
 }
 
+.dag-apple-text {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 1vw;
+  left: 5vw;
+  top: 0.5vw;
+}
+
+.dag-apple-info {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #666666;
+  font-size: 0.7vw;
+  left: 5vw;
+  top: 2vw;
+}
+
+.dag-apple-info::before {
+  content: "●";
+  margin-right: 0.2vw; /* Optioneel: voeg ruimte toe tussen de punt en de tekst */
+}
+
+.dag-plus2 {
+  position: absolute;
+  width: 2vw;
+  top: 0.8vw;
+  left: 16.5vw;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.dag-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+
 /* vierde border editen */
 
 .dag-middle4-border {
@@ -375,4 +416,22 @@ body{
   font-size: 1.4vw;
   left: 11vw;
   top: 3vw;
+}
+
+.dag-little2-border {
+  position: absolute;
+  width: 8.5vw; 
+  height: 8.5vw; 
+  background-color: white;
+  border: 0.3vw solid black;
+  border-radius: 2vw; 
+  left: 2.5vw;
+  top: 7vw;
+}
+
+.dag-jogging2 {
+  position: absolute;
+  width: 4.5vw;
+  top: 2vw;
+  left: 2vw;
 }
