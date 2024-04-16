@@ -435,3 +435,133 @@ body{
   top: 2vw;
   left: 2vw;
 }
+
+.dag-gelopen {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #666666;
+  font-size: 1.4vw;
+  left: 5.5vw;
+  top: 17vw;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* voortgang bijhouden met gewicht */
+
+.dag-voortgang {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #666666;
+  font-size: 1.4vw;
+  left: 43vw;
+  top: 128vw;
+}
+
+.dag-voortgang-border {
+  position: absolute;
+  width: 37vw; 
+  height: 14vw; 
+  background-color: #666666;
+  border: 0.2vw solid black;
+  border-radius: 2vw; 
+  left: 31.5vw;
+  top: 132vw;
+}
+
+.dag-gewicht {
+  position: absolute;
+  font-weight: bold;
+  color: white;
+  font-size: 1.4vw;
+  left: 16vw;
+  top: 1vw;
+}
+
+.dag-plus3 {
+  position: absolute;
+  width: 3vw;
+  top: 5vw;
+  left: 25vw;
+  cursor: pointer;
+}
+
+.dag-gewicht-mens {
+  position: absolute;
+  font-weight: bold;
+  color: white;
+  font-size: 2.5vw;
+  left: 15.6vw;
+  top: 4.5vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dag-min {
+  position: absolute;
+  width: 3.3vw;
+  top: 4.8vw;
+  left: 9.8vw;
+  cursor: pointer;
+}
+
+.dag-gewicht-doel {
+  position: absolute;
+  font-weight: bold;
+  color: white;
+  font-size: 1.6vw;
+  left: 16.9vw;
+  top: 9vw;
+}
+
+.dag-gewicht-doel2 {
+  position: absolute;
+  font-weight: bold;
+  color: white;
+  font-size: 1.4vw;
+  left: 17vw;
+  top: 11.5vw;
+}
+
+.dag-button-gewicht {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.dag-button-gewicht2 {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* de feitjes van elke dag bij houden */
+
+.dag-feiten-border {
+  position: absolute;
+  width: 37vw; 
+  height: 14vw; 
+  background-color: white;
+  border: 0.2vw solid black;
+  border-radius: 2vw; 
+  left: 31.5vw;
+  top: 152vw;
+}
+
+.dag-feit {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 1.4vw;
+  left: 14vw;
+  top: 1.5vw;
+}
+
+.dag-feitjes {
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 1.4vw;
+  left: 6vw;
+  top: 4.5vw;
+}

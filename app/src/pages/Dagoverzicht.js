@@ -9,6 +9,7 @@ import jogging from "../img/exercise.png";
 import apple from "../img/apple.png";
 import plus2 from "../img/plus2.png";
 import jogging2 from "../img/jogging.png";
+import min from "../img/interface.png";
 
 const Dagoverzicht = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -126,6 +127,28 @@ const Dagoverzicht = () => {
         <div className="dag-activiteit2-toevoeg">Vandaag gegeten</div>
         <div className="dag-little2-border">
           <img src={jogging2} alt="dag-jogging2" className="dag-jogging2"></img>
+        </div>
+        <div className="dag-gelopen">6 km</div>
+      </div>
+
+      <div className="dag-voortgang">Houd je voortgang bij</div>
+      <div className="dag-voortgang-border">
+        <div className="dag-gewicht">Gewicht</div>
+        <button className="dag-button-gewicht">
+          <img src={plus} alt="dag-plus3" className="dag-plus3"></img>
+        </button>
+        <div className="dag-gewicht-mens">80 kg</div>
+        <button className="dag-button-gewicht2">
+          <img src={min} alt="dag-min" className="dag-min"></img>
+        </button>
+        <div className="dag-gewicht-doel">Doel</div>
+        <div className="dag-gewicht-doel2">75 kg</div>
+      </div>
+
+      <div className="dag-feiten-border">
+        <div className="dag-feit">Feit van de dag</div>
+        <div className="dag-feitjes">
+          Hier komt een feit te staan die elke dag wat anders weergeeft
         </div>
       </div>
     </div>
