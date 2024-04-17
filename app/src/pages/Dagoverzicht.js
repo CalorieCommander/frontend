@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Dagoverzicht.css";
 import { Link } from "react-router-dom";
 import logo from "../img/caloriecommander.png";
@@ -17,10 +17,45 @@ const Dagoverzicht = () => {
   const [totalMealCalories, setTotalMealCalories] = useState(0);
   const [dailyCalorieGoal, setDailyCalorieGoal] = useState(0);
 
+  const dailyFacts = [
+    "Eén keer per week vis eten is goed voor uw hart.",
+    "Blauwe bessen behoren tot de meest voedzame vruchten ter wereld.",
+    "Bananen zijn rijk aan kalium, wat goed is voor de gezondheid van het hart.",
+    "Appels bevatten veel vezels, die kunnen helpen bij het reguleren van de spijsvertering.",
+    "Sinaasappels zijn een uitstekende bron van vitamine C, wat belangrijk is voor een gezond immuunsysteem.",
+    "Aardbeien zijn rijk aan antioxidanten, die kunnen helpen bij het bestrijden van ontstekingen.",
+    "Ananas bevat een enzym genaamd bromelaïne, dat kan helpen bij de spijsvertering.",
+    "Granaatappelsap staat bekend om zijn hoge gehalte aan antioxidanten, wat gunstig is voor de gezondheid van het hart.",
+    "Mango's zijn rijk aan vitamine A, wat belangrijk is voor een gezonde huid en ogen.",
+    "Avocado's bevatten gezonde enkelvoudig onverzadigde vetten, die kunnen helpen bij het verlagen van het cholesterolgehalte.",
+    "Kiwi's bevatten meer vitamine C dan sinaasappels.",
+    "Druiven bevatten resveratrol, een antioxidant die gunstig kan zijn voor de gezondheid van het hart.",
+    "Bosbessen kunnen helpen bij het verbeteren van de hersenfunctie en het geheugen.",
+    "Papaja's bevatten enzymen die kunnen helpen bij de spijsvertering en de darmgezondheid bevorderen.",
+    "Perziken zijn een goede bron van vitamine A en vitamine C.",
+    "Watermeloenen bevatten veel water en zijn een verfrissende en hydraterende vrucht.",
+    "Cranberry's zijn rijk aan antioxidanten en kunnen helpen bij het voorkomen van urineweginfecties.",
+    "Pruimen bevatten vezels en antioxidanten die de spijsvertering kunnen bevorderen.",
+    "Kersen bevatten melatonine, een hormoon dat de slaap kan bevorderen.",
+    "Appels bevatten pectine, een vezel die kan helpen bij het verlagen van het cholesterolgehalte.",
+    "Bananen bevatten tryptofaan, een aminozuur dat kan helpen bij het verbeteren van de stemming.",
+    "Ananas bevat bromelaïne, een enzym dat kan helpen bij de spijsvertering en ontstekingen kan verminderen.",
+  ];
+
+  // Functie om het feit van de dag op te halen op basis van de huidige datum
+  const getDailyFact = () => {
+    const currentDate = new Date();
+    const dayOfMonth = currentDate.getDate();
+    return dailyFacts[dayOfMonth - 1] || "Geen feit beschikbaar";
+  };
+
+  // Haal het feit van de dag op
+  const dailyFact = getDailyFact();
+
   // Functie om de tekst voor de datum bij te werken
   const updateDateText = () => {
     const days = [
-      "Zondag3333",
+      "Zondag",
       "Maandag",
       "Dinsdag",
       "Woensdag",
@@ -147,9 +182,21 @@ const Dagoverzicht = () => {
 
       <div className="dag-feiten-border">
         <div className="dag-feit">Feit van de dag</div>
-        <div className="dag-feitjes">
-          Hier komt een feit te staan die elke dag wat anders weergeeft
+        <div className="dag-feitjes">{dailyFact}</div>
+      </div>
+
+      <div className="dag-footers">
+        <img src={logo} alt="dag-logo" className="dag-logo-footer"></img>
+        <div className="dag-footer-text">
+          Snel om aan de slag te gaan
+          <br />
+          Aanrader om te gebruiken
+          <br />
+          Volgens experts de beste keuze
         </div>
+        <Link to="#" className="dag-about-link">
+          About
+        </Link>
       </div>
     </div>
   );
