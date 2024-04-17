@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import './Registreren.css';
-import { Link, useNavigate  } from "react-router-dom";
-import logo from '../img/caloriecommander.png';
+import { useNavigate } from "react-router-dom";
 
 const Registreren = () => {
   let navigate = useNavigate();
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     register_first_name: '',
     register_last_name: '',
@@ -27,11 +27,20 @@ const Registreren = () => {
         })
       });
       if (!response.ok) {
-        console.log(response);
+        const responseData = await response.json();
+        if (response.status === 422) {
+          console.log(responseData.errors);
+          setErrors(responseData.errors);
+        } else {
+          throw new Error(responseData.message || 'An error occurred.');
+        }
+      } else {
+        const jsonData = await response.json();
+        console.log(jsonData);
+        navigate("/login");
       }
-      const jsonData = await response.json();
-      navigate("/Inloggen");
-      
+
+
     } catch (error) {
       console.log(error);
     }
@@ -41,14 +50,6 @@ const Registreren = () => {
   };
   return (
     <div className="Test">
-      <div className="navbar">
-        <img src={logo} alt="logo" className="logo" />
-        <Link to="/" className="home">
-          <h2>HOME</h2>
-        </Link>
-      </div>
-      <div className="line"></div>
-
       <div className="register-text">
         REGISTREREN
       </div>
@@ -56,18 +57,18 @@ const Registreren = () => {
 
       <div className="register-container">
         <form onSubmit={handleSubmit} method="post">
-          <input type="text" id="firstname" name="register_first_name" placeholder="Je voornaam" onChange={handleChange} required></input>
-          <input type="text" id="lastname" name="register_last_name" placeholder="Je achternaam" onChange={handleChange} required></input>
-          <input type="email" id="email" name="register_email" placeholder="Je email" onChange={handleChange} required></input>
-          <input type="password" id="password" name="register_password" placeholder="Je wachtwoord" onChange={handleChange} required></input>
-          <input type="password" id="password2" name="register_password_confirmation" placeholder="Bevestig je wachtwoord" onChange={handleChange} required></input>
-          <button type="submit"> Registreren </button>
+          <input type="text" id="register_firstname" name="register_first_name" placeholder="Je voornaam" onChange={handleChange} required></input>
+          {errors.first_name && <div className="error">{errors.first_name[0]}</div>}
+          <input type="text" id="register_lastname" name="register_last_name" placeholder="Je achternaam" onChange={handleChange} required></input>
+          {errors.last_name && <div className="error">{errors.last_name[0]}</div>}
+          <input type="email" id="register_email" name="register_email" placeholder="Je emailadres" onChange={handleChange} required></input>
+          {errors.email && <div className="error">{errors.email[0]}</div>}
+          <input type="password" id="register_password" name="register_password" placeholder="Je wachtwoord" onChange={handleChange} required></input>
+          {errors.password && <div className="error">{errors.password[0]}</div>}
+          <input type="password" id="register_password_confirmation" name="register_password_confirmation" placeholder="Bevestig je wachtwoord" onChange={handleChange} required></input>
+          <button id="submit_button" type="submit"> Registreren </button>
         </form>
       </div>
-
-      <Link to="/Registreren" className="registreer-button">
-        registeren
-      </Link>
 
     </div>
   );
