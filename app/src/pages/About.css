@@ -1,0 +1,11 @@
+/* Alle informatie van ons in de about page */
+
+.about-info {
+    position: absolute;
+    color: black;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: bold; 
+    font-size: 2.5vw;
+    left: 44vw; 
+    top: 1.5vw;
+}

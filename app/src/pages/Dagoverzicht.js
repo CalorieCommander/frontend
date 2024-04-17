@@ -194,7 +194,7 @@ const Dagoverzicht = () => {
           <br />
           Volgens experts de beste keuze
         </div>
-        <Link to="#" className="dag-about-link">
+        <Link to="/About" className="dag-about-link">
           About
         </Link>
       </div>
