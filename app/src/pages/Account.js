@@ -62,16 +62,20 @@ const AccountPage = () => {
         onClick={closePopup1}
       >
         <div className="popup" onClick={(e) => e.stopPropagation()}>
-          <div className="activiteit-container">
-            <h2 id="act-title">(activiteit)</h2>
-            <div className="gray">
-              <img className="lopen" src={image} alt="wandelen" />
-            </div>
-            <h5 id="kcal">0 kcal</h5>
-            <input type="number" id="number" name="kcal-number" placeholder="Afstand in kilometer" required></input>
-            <button className="opslaan">
-              <h2>Toevoegen</h2>
-            </button>
+          <div className="act-add-container">
+            <h2 className="act-add-title">Activiteit toevoegen</h2>
+              <div className="popup-border">
+                <h5 className="act-add-title">Beschikbare Activiteiten</h5>
+                <button className="act-1" onClick={openPopup2}>
+                  hardlopen
+                </button>
+                <button className="act-2" onClick={openPopup2}>
+                  wandelen
+                </button>
+                <button className="act-3" onClick={openPopup2}>
+                  fietsen
+                </button>
+              </div>
           </div>
         </div>
       </div>
@@ -82,13 +86,11 @@ const AccountPage = () => {
         onClick={closePopup2}
       >
         <div className="popup" onClick={(e) => e.stopPropagation()}>
-          <div className="maaltijd-container">
-            <h2 id="maaltijd-title">(maaltijd)</h2>
-            <div className="gray">
-              <img src="" alt="maaltijd" />
-            </div>
-            <h5 id="kcal">0 kcal</h5>
-            <input type="number" id="number" name="kcal-number" placeholder="Kcal" required></input>
+          <div className="activiteit-container">
+            <h2 className="act-title">(activiteit)</h2>
+            <div className="gray"></div>
+            <h5 id="kcal">afstand in kilometer</h5>
+            <input type="number" id="number" name="kcal-number" placeholder="KM" required></input>
             <button className="opslaan">
               <h2>Toevoegen</h2>
             </button>
@@ -105,7 +107,7 @@ const AccountPage = () => {
       </button>
 
       <button className="button2" onClick={openPopup2}>
-        Maaltijd toevoegen
+        Activiteit
       </button>  
     </div>
   );
