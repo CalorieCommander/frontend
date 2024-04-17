@@ -1,23 +1,42 @@
 import React, { useState } from "react";
 import "./../pages/Account.css";
+import image from "./../img/fef.png";
 
 const AccountPage = () => {
-  const [showPopup, setShowPopup] = useState(false); // Staat om bij te houden of de pop-up moet worden weergegeven
+  const [showPopup0, setShowPopup0] = useState(false); // State for the first popup
+  const [showPopup1, setShowPopup1] = useState(false); // State for the second popup
+  const [showPopup2, setShowPopup2] = useState(false); // State for the third popup
 
-  const openPopup = () => {
-    setShowPopup(true); // Stel de staat in om de pop-up weer te geven wanneer de knop wordt geklikt
+  const openPopup0 = () => {
+    setShowPopup0(true);
   };
 
-  const closePopup = () => {
-    setShowPopup(false); // Stel de staat in om de pop-up te verbergen wanneer er buiten de pop-up wordt geklikt
+  const openPopup1 = () => {
+    setShowPopup1(true);
+  };
+
+  const openPopup2 = () => {
+    setShowPopup2(true);
+  };
+
+  const closePopup0 = () => {
+    setShowPopup0(false);
+  };
+
+  const closePopup1 = () => {
+    setShowPopup1(false);
+  };
+
+  const closePopup2 = () => {
+    setShowPopup2(false);
   };
 
   return (
     <div>
       <div
-        className={`overlay ${showPopup ? "show" : ""}`}
+        className={`overlay ${showPopup0 ? "show" : ""}`}
         id="overlay"
-        onClick={closePopup}
+        onClick={closePopup0}
       >
         <div className="popup" onClick={(e) => e.stopPropagation()}>
           <div className="ww-container">
@@ -37,54 +56,57 @@ const AccountPage = () => {
         </div>
       </div>
 
-
-      <div className="border">
-        <div className="name">cerchio</div>
-        <div className="gegevens">Gegevens</div>
-
-
-        <div className="gegevens-1">
-          <div className="naam">naam:</div>
-          <div className="email">email:</div>
-          <div className="geslacht">geslacht:</div>
+      <div
+        className={`overlay ${showPopup1 ? "show" : ""}`}
+        id="overlay"
+        onClick={closePopup1}
+      >
+        <div className="popup" onClick={(e) => e.stopPropagation()}>
+          <div className="activiteit-container">
+            <h2 id="act-title">(activiteit)</h2>
+            <div className="gray">
+              <img className="lopen" src={image} alt="wandelen" />
+            </div>
+            <h5 id="kcal">0 kcal</h5>
+            <input type="number" id="number" name="kcal-number" placeholder="Afstand in kilometer" required></input>
+            <button className="opslaan">
+              <h2>Toevoegen</h2>
+            </button>
+          </div>
         </div>
-
-
-        <div className="gegevens-2">
-          <input className="input" type="text" placeholder="Cerchio" />
-          <input className="input" type="text" placeholder="jojo@gmail.com" />
-          <input className="input" type="text" placeholder="Man" />
-        </div>
-
-        <button className="password-link" onClick={openPopup}>
-          Wachtwoord veranderen
-        </button>
-        <div className="BMI">BMI</div>
-
-
-        <div className="gegevens-3">
-          <div className="leeftijd">Leeftijd:</div>
-          <div className="lengte">Lengte:</div>
-          <div className="gewicht">Gewicht:</div>
-          <div className="doel-gewicht">Doel gewicht:</div>
-        </div>
-
-
-        <div className="gegevens-4">
-          <input className="input" type="text" placeholder="19" />
-          <input className="input" type="text" placeholder="1.87 meter" />
-          <input className="input" type="text" placeholder="76 kg" />
-          <input className="input" type="text" placeholder="70 kg" />
-        </div>
-        <button className="bewerken">
-          <a href="#" className="gegevens-text">
-            Gegevens bewerken
-          </a>
-        </button>
-        <a href="#" className="verwijderen-text">
-          Account verwijderen
-        </a>
       </div>
+
+      <div
+        className={`overlay ${showPopup2 ? "show" : ""}`}
+        id="overlay"
+        onClick={closePopup2}
+      >
+        <div className="popup" onClick={(e) => e.stopPropagation()}>
+          <div className="maaltijd-container">
+            <h2 id="maaltijd-title">(maaltijd)</h2>
+            <div className="gray">
+              <img src="" alt="maaltijd" />
+            </div>
+            <h5 id="kcal">0 kcal</h5>
+            <input type="number" id="number" name="kcal-number" placeholder="Kcal" required></input>
+            <button className="opslaan">
+              <h2>Toevoegen</h2>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button className="button0" onClick={openPopup0}>
+        Wachtwoord veranderen
+      </button>
+
+      <button className="button1" onClick={openPopup1}>
+        Activiteit toevoegen
+      </button>
+
+      <button className="button2" onClick={openPopup2}>
+        Maaltijd toevoegen
+      </button>  
     </div>
   );
 };
