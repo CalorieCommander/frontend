@@ -10,6 +10,7 @@ import apple from "../img/apple.png";
 import plus2 from "../img/plus2.png";
 import jogging2 from "../img/jogging.png";
 import min from "../img/interface.png";
+import check from "../img/checked.png";
 
 const Dagoverzicht = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -19,6 +20,9 @@ const Dagoverzicht = () => {
 
   const [showPopup1, setShowPopup1] = useState(false);
   const [showPopup2, setShowPopup2] = useState(false);
+  const [showPopup3, setShowPopup3] = useState(false);
+  const [showPopup4, setShowPopup4] = useState(false);
+  const [showPopup5, setShowPopup5] = useState(false);
 
   const openPopup1 = () => {
     setShowPopup1(true);
@@ -28,12 +32,36 @@ const Dagoverzicht = () => {
     setShowPopup2(true);
   };
 
+  const openPopup3 = () => {
+    setShowPopup3(true);
+  };
+
+  const openPopup4 = () => {
+    setShowPopup4(true);
+  };
+
+  const openPopup5 = () => {
+    setShowPopup5(true);
+  };
+
   const closePopup1 = () => {
     setShowPopup1(false);
   };
 
   const closePopup2 = () => {
     setShowPopup2(false);
+  };
+
+  const closePopup3 = () => {
+    setShowPopup3(false);
+  };
+
+  const closePopup4 = () => {
+    setShowPopup4(false);
+  };
+
+  const closePopup5 = () => {
+    setShowPopup5(false);
   };
 
   const dailyFacts = [
@@ -145,7 +173,7 @@ const Dagoverzicht = () => {
         <div className="dag-maaltijd-toevoeg">Voeg hier je maaltijden toe</div>
         <div className="dag-maaltijd-text">Voeg nu je eerste</div>
         <div className="dag-maaltijd-text1">maaltijd toe</div>
-        <button className="dag-meal-button">
+        <button className="dag-meal-button" onClick={openPopup3}>
           <img src={plus} alt="plus" className="dag-plus"></img>
           <div className="dag-toevoegen">Toevoegen</div>
         </button>
@@ -197,6 +225,9 @@ const Dagoverzicht = () => {
         </button>
         <div className="dag-gewicht-doel">Doel</div>
         <div className="dag-gewicht-doel2">75 kg</div>
+        <button className="dag-check-doel">
+          <img src={check} alt="check" className="dag-check"></img>
+        </button>
       </div>
 
       <div className="dag-feiten-border">
@@ -262,6 +293,110 @@ const Dagoverzicht = () => {
             <button className="opslaan">
               <h2>Toevoegen</h2>
             </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`overlay ${showPopup3 ? "show" : ""}`}
+        id="overlay"
+        onClick={closePopup3}
+      >
+        <div className="popup" onClick={(e) => e.stopPropagation()}>
+          <div className="maaltijd-add-container">
+            <h2 className="maaltijd-add-title">Maaltijd toevoegen</h2>
+            <div className="popup-border">
+              <h5 className="maaltijd-add-title">Beschikbare Maaltijden</h5>
+              <button className="search-button" onClick={openPopup4}>
+                Wat wil je zoeken?
+              </button>
+              <div className="maaltijd-1">
+                <div id="test1">Kwark 0% vet</div>
+                <div id="test2" className="incline-block">
+                  Optimel, normale portie 100g
+                </div>
+              </div>
+              <div className="maaltijd-2">
+                <div id="test1">Broodje worst</div>
+                <div id="test2">Normale portie 150g</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`overlay ${showPopup4 ? "show" : ""}`}
+        id="overlay"
+        onClick={closePopup4}
+      >
+        <div className="popup" onClick={(e) => e.stopPropagation()}>
+          <div className="search-container">
+            <input
+              type="text"
+              id="search"
+              name="search"
+              placeholder="Zoek een maaltijd"
+              required
+            ></input>
+            <h5 id="recent-title">Recente zoekopdrachten</h5>
+            <h5 id="recent">kwark</h5>
+            <h5 id="recent">ananas</h5>
+            <h5 id="recent">help het is 1 uur 's nachts ik wil dood</h5>
+            <button className="result" onClick={openPopup5}>
+              <img src={apple} alt="result-img" className="result-img"></img>
+              <h5 className="result-title">
+                DIT DINGETJE KOMT PAS ALS JE IETS INTYPT IN DE SEARCHBAR
+              </h5>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`overlay ${showPopup5 ? "show" : ""}`}
+        id="overlay"
+        onClick={closePopup5}
+      >
+        <div className="popup" onClick={(e) => e.stopPropagation()}>
+          <div className="maaltijd-container">
+            <img src={apple} alt="maaltijd" className="maaltijd-img"></img>
+            <h2 className="maaltijd-title">(maaltijd)</h2>
+            <div className="blokjes-container">
+              <div className="kenmerken-container">
+                <h5 className="kenmerken-title">kenmerken</h5>
+                <div className="kenmerken">
+                  <div className="kenmerk">
+                    kenmerk
+                    <div className="kenmerk-digit">150g</div>
+                  </div>
+                  <div className="kenmerk-line"></div>
+                  <div className="kenmerk">
+                    Energie (kcal)
+                    <div className="kenmerk-digit">80</div>
+                  </div>
+                  <div className="kenmerk-line"></div>
+                  <div className="kenmerk">
+                    Vetten
+                    <div className="kenmerk-digit">0</div>
+                  </div>
+                  <div className="kenmerk-line"></div>
+                  <div className="kenmerk">
+                    Suikers
+                    <div className="kenmerk-digit">12g</div>
+                  </div>
+                  <div className="kenmerk-line"></div>
+                </div>
+                <button className="maaltijd-opslaan">Toevoegen</button>
+              </div>
+              <div className="feitjes-container">
+                <h5 className="kenmerken-title">leuk feitje</h5>
+                <div className="feitje">
+                  Hallo, Mijn naam is Bas Brouwer en ik ben nu 3 uur lang bezig
+                  met dit. Het is 2 uur 's nachts en ik wil dood.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
