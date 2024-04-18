@@ -6,7 +6,6 @@ import {
   useLocation,
 } from "react-router-dom";
 import "./index.css";
-// @ts-ignore
 import Homepage from "./pages/Homepage";
 import Accountpagina from "./pages/Accountpagina";
 import Inloggen from "./pages/Inloggen";
@@ -28,8 +27,7 @@ const AppContent = () => {
   const showName =
     location.pathname !== "/" &&
     location.pathname !== "/login" &&
-    location.pathname !== "/register" &&
-    location.pathname !== "/maandoverzicht"; // Voeg hier andere pagina's toe waarop de naam niet moet worden weergegeven
+    location.pathname !== "/register";
 
   return (
     <div>
