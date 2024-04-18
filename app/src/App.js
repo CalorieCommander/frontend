@@ -6,6 +6,8 @@ import Homepage from "./pages/Homepage";
 import Accountpagina from "./pages/Accountpagina";
 import Inloggen from "./pages/Inloggen";
 import Registreren from "./pages/Registreren";
+import Dagoverzicht from "./pages/Dagoverzicht";
+import Maandoverzicht from "./pages/Maandoverzicht";
 import logo from "./img/caloriecommander.png";
 
 
@@ -25,6 +27,8 @@ function App() {
           <Route exact path="/login" element={<Inloggen />} />
           <Route exact path="/account" element={<Accountpagina />} />
           <Route exact path="/register" element={<Registreren />} />
+          <Route exact path="/dagoverzicht" element={<Dagoverzicht />} />
+          <Route exact path="/maandoverzicht" element={<Maandoverzicht />} />
         </Routes>
     </Switch>
   );

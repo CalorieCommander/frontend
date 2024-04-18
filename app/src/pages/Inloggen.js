@@ -31,7 +31,7 @@ const Inloggen = () => {
       } else {
         const jsonData = await response.json();
         localStorage.setItem('token', jsonData.access_token);
-        navigate("/account");
+        navigate("/dagoverzicht");
       }
 
 
