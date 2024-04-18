@@ -30,6 +30,7 @@ body {
     color: #0097B2;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
+    margin-bottom: 2vh;
   }
 :root {
 	--c-theme-primary: #008FFD;
@@ -88,6 +89,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 .wrapper{
+  margin: auto;
   width: 450px;
   background: #fff;
   border-radius: 10px;
@@ -169,7 +171,7 @@ header .current-date{
   transform: translate(-50%, -50%);
 }
 .days li.active::before{
-  background: #9B59B6;
+  background: #0097B2;
 }
 .days li:not(.active):hover::before{
   background: #f2f2f2;

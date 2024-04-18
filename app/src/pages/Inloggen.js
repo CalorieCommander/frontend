@@ -29,9 +29,17 @@ const Inloggen = () => {
           throw new Error(responseData.message || 'An error occurred.');
         }
       } else {
+        const clickeddate = new Date();
         const jsonData = await response.json();
         localStorage.setItem('token', jsonData.access_token);
-        navigate("/dagoverzicht");
+        navigate(
+          '/dagoverzicht',
+          {
+            state: {
+              clickeddate
+            }
+          }
+      )
       }
 
 

@@ -4,6 +4,42 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Accountpagina = () => {
     let navigate = useNavigate();
+    const [showPopup1, setShowPopup1] = useState(false);
+    const [showPopup2, setShowPopup2] = useState(false);
+    const [showPopup3, setShowPopup3] = useState(false);
+    const [showPopup4, setShowPopup4] = useState(false);
+    const [showPopup5, setShowPopup5] = useState(false);
+  
+    const openPopup1 = () => {
+      setShowPopup1(true);
+    };
+    const openPopup2 = () => {
+      setShowPopup2(true);
+    };
+    const openPopup3 = () => {
+      setShowPopup3(true);
+    };
+    const openPopup4 = () => {
+      setShowPopup4(true);
+    };
+    const openPopup5 = () => {
+      setShowPopup5(true);
+    };
+    const closePopup1 = () => {
+      setShowPopup1(false);
+    };
+    const closePopup2 = () => {
+      setShowPopup2(false);
+    };
+    const closePopup3 = () => {
+      setShowPopup3(false);
+    };
+    const closePopup4 = () => {
+      setShowPopup4(false);
+    };
+    const closePopup5 = () => {
+      setShowPopup5(false);
+    };
     const [errors, setErrors] = useState({});
     const [showPopup, setShowPopup] = useState(false);
     const openPopup = () => {

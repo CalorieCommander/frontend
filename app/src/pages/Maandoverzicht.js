@@ -1,11 +1,11 @@
 import "./Maandoverzicht.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../img/caloriecommander.png";
 import React, { useState, useEffect } from "react";
 
 const Maandoverzicht = () => {
   const [showPopup, setShowPopup] = useState(false); // Staat om bij te houden of de pop-up moet worden weergegeven
-
+  let navigate = useNavigate();
   useEffect(() => {
     const daysTag = document.querySelector(".days");
     const currentDate = document.querySelector(".current-date");
@@ -31,39 +31,54 @@ const Maandoverzicht = () => {
       "November",
       "December",
     ];
-
     const renderCalendar = () => {
-      let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
-        lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
-        lastDayofMonth = new Date(
-          currYear,
-          currMonth,
-          lastDateofMonth
-        ).getDay(), // getting last day of month
-        lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
-      let liTag = "";
-      for (let i = firstDayofMonth; i > 0; i--) {
-        // creating li of previous month last days
-        liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
-      }
-      for (let i = 1; i <= lastDateofMonth; i++) {
-        // creating li of all days of current month
-        // adding active class to li if the current day, month, and year matched
-        let isToday =
-          i === date.getDate() &&
-          currMonth === new Date().getMonth() &&
-          currYear === new Date().getFullYear()
-            ? "active"
-            : "";
-        liTag += `<li class="${isToday}">${i}</li>`;
-      }
-      for (let i = lastDayofMonth; i < 6; i++) {
-        // creating li of next month first days
-        liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
-      }
-      currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
-      daysTag.innerHTML = liTag;
-    };
+        let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(); // getting first day of month
+        let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(); // getting last date of month
+        let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(); // getting last day of month
+        let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
+        let liTag = "";
+      
+        for (let i = firstDayofMonth; i > 0; i--) {
+          // creating li of previous month last days
+          liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+        }
+      
+        for (let i = 1; i <= lastDateofMonth; i++) {
+          // creating li of all days of current month
+          // adding active class to li if the current day, month, and year matched
+          let isToday =
+            i === date.getDate() &&
+            currMonth === date.getMonth() &&
+            currYear === date.getFullYear()
+              ? "active"
+              : "";
+          liTag += `<li class="${isToday}">${i}</li>`;
+        }
+      
+        for (let i = lastDayofMonth; i < 6; i++) {
+          // creating li of next month first days
+          liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+        }
+      
+        currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
+        daysTag.innerHTML = liTag;
+      
+        const dayElements = document.querySelectorAll('.days li');
+        dayElements.forEach((dayElement, index) => {
+          dayElement.addEventListener('click', () => {
+            const selectedDate = parseInt(dayElement.textContent) + 1; // Corrected way to get the selected date
+            const clickeddate = new Date(currYear, currMonth, selectedDate);
+            navigate(
+                '/dagoverzicht',
+                {
+                  state: {
+                    clickeddate
+                  }
+                }
+            )
+          });
+        });
+      };
 
     renderCalendar();
 
@@ -79,8 +94,10 @@ const Maandoverzicht = () => {
           date = new Date(currYear, currMonth, new Date().getDate());
           currYear = date.getFullYear(); // updating current year with new date year
           currMonth = date.getMonth(); // updating current month with new date month
+          console.log(date);
         } else {
           date = new Date(); // pass the current date as date value
+          console.log(date);
         }
         renderCalendar(); // calling renderCalendar function
       });
@@ -95,14 +112,14 @@ const Maandoverzicht = () => {
         <div className="maandoverzicht-text">Dit is uw maandoverzicht</div>
       </div>
       <div class="wrapper">
-        <header>
+      <header>
           <p class="current-date"></p>
           <div class="icons">
             <span id="prev" class="material-symbols-rounded">
-              chevron_left
+            ⬅
             </span>
             <span id="next" class="material-symbols-rounded">
-              chevron_right
+            ➡
             </span>
           </div>
         </header>
