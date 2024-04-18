@@ -105,7 +105,14 @@ const Maandoverzicht = () => {
       <div class="wrapper">
         <header>
           <p class="current-date"></p>
-   
+          <div class="icons">
+            <span id="prev" class="material-symbols-rounded">
+            ←
+            </span>
+            <span id="next" class="material-symbols-rounded">
+            →
+            </span>
+          </div>
         </header>
         <div class="calendar">
           <ul class="weeks">
