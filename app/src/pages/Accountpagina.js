@@ -140,33 +140,45 @@ const Accountpagina = () => {
                 <div className="account-name">{data.first_name}</div>
                 <div className="account-gegevens">Gegevens</div>
                 <div className="account-naam">
-                    Voornaam:
-                    <br />
-                    Achternaam:
-                    <br />
-                    E-mailadres:
-                    <br />
-                    Geslacht:
+                    <div>
+                        Voornaam
+                        <input className="account" name="account-firstname" disabled type="text" defaultValue={data.first_name} />
+                    </div>
+                    <div>
+                        Achternaam
+                        <input className="account" name="account-lastname" disabled type="text" defaultValue={data.last_name} />
+                    </div>
+                    <div>
+                        E-mailadres
+                        <input className="account" name="account-email" disabled type="text" defaultValue={data.email} />
+                    </div>
+                    <div>
+                        Geslacht
+                        <input className="account" name="account_gender" type="text" onChange={handleChange} defaultValue={data.gender} />
+                    </div>
                 </div>
-                <input className="account-firstname" name="account-firstname" disabled type="text" defaultValue={data.first_name} />
-                <input className="account-lastname" name="account-lastname" disabled type="text" defaultValue={data.last_name} />
-                <input className="account-email" name="account-email" disabled type="text" defaultValue={data.email} />
+                
+                
+                
                 <form onSubmit={handleSubmit}>
-                    <input className="account_gender" name="account_gender" type="text" onChange={handleChange} defaultValue={data.gender} />
                     <button className="account-password-link" onClick={openPopup}>
                         Wachtwoord veranderen
                     </button>
                     <div className="account-BMI">BMI</div>
                     <div className="account-bmi-gegevens">
-                        Leeftijd:
-                        <br />
-                        Lengte (CM):
-                        <br />
-                        Gewicht (KG):
+                        <div>
+                            Leeftijd:
+                            <input className="account" name="account_age" type="text" onChange={handleChange} defaultValue={data.age} />
+                        </div>
+                        <div>
+                            Lengte (CM):
+                            <input className="account" name="account_height" type="text" onChange={handleChange} defaultValue={data.height} />
+                        </div>
+                        <div>
+                            Gewicht (KG):
+                            <input className="account" name="account_weight" type="text" onChange={handleChange} defaultValue={data.weight} />
+                        </div>
                     </div>
-                    <input className="account_age" name="account_age" type="text" onChange={handleChange} defaultValue={data.age} />
-                    <input className="account_length" name="account_length" type="text" onChange={handleChange} defaultValue={data.height} />
-                    <input className="account_weight" name="account_weight" type="text" onChange={handleChange} defaultValue={data.weight} />
                     <button className="account-bewerken">
                         Gegevens bewerken
                     </button>
