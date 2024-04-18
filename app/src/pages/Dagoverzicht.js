@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Dagoverzicht.css";
 import { Link } from "react-router-dom";
 import logo from "../img/caloriecommander.png";
@@ -16,6 +16,25 @@ const Dagoverzicht = () => {
   const [activityCount, setActivityCount] = useState(0);
   const [totalMealCalories, setTotalMealCalories] = useState(0);
   const [dailyCalorieGoal, setDailyCalorieGoal] = useState(0);
+
+  const [showPopup1, setShowPopup1] = useState(false);
+  const [showPopup2, setShowPopup2] = useState(false);
+
+  const openPopup1 = () => {
+    setShowPopup1(true);
+  };
+
+  const openPopup2 = () => {
+    setShowPopup2(true);
+  };
+
+  const closePopup1 = () => {
+    setShowPopup1(false);
+  };
+
+  const closePopup2 = () => {
+    setShowPopup2(false);
+  };
 
   const dailyFacts = [
     "Eén keer per week vis eten is goed voor uw hart.",
@@ -140,7 +159,7 @@ const Dagoverzicht = () => {
         </div>
         <div className="dag-activiteit-text">Klik hier om je activiteit te</div>
         <div className="dag-activiteit-text1">voegen</div>
-        <button className="dag-activity-button">
+        <button className="dag-activity-button" onClick={openPopup1}>
           <img src={plus} alt="plus" className="dag-plus"></img>
           <div className="dag-toevoegen">Toevoegen</div>
         </button>
@@ -197,6 +216,54 @@ const Dagoverzicht = () => {
         <Link to="#" className="dag-about-link">
           About
         </Link>
+      </div>
+
+      <div
+        className={`overlay ${showPopup1 ? "show" : ""}`}
+        id="overlay"
+        onClick={closePopup1}
+      >
+        <div className="popup" onClick={(e) => e.stopPropagation()}>
+          <div className="act-add-container">
+            <h2 className="act-add-title">Activiteit toevoegen</h2>
+            <div className="popup-border">
+              <h5 className="act-add-title">Beschikbare Activiteiten</h5>
+              <button className="act-1" onClick={openPopup2}>
+                hardlopen
+              </button>
+              <button className="act-2" onClick={openPopup2}>
+                wandelen
+              </button>
+              <button className="act-3" onClick={openPopup2}>
+                fietsen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`overlay ${showPopup2 ? "show" : ""}`}
+        id="overlay"
+        onClick={closePopup2}
+      >
+        <div className="popup" onClick={(e) => e.stopPropagation()}>
+          <div className="activiteit-container">
+            <h2 className="act-title">(activiteit)</h2>
+            <div className="gray"></div>
+            <h5 id="kcal">afstand in kilometer</h5>
+            <input
+              type="number"
+              id="number"
+              name="kcal-number"
+              placeholder="KM"
+              required
+            ></input>
+            <button className="opslaan">
+              <h2>Toevoegen</h2>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
