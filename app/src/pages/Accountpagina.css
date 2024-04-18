@@ -111,6 +111,8 @@ input[id="password_popup_password_confirmation"]{
 }
 
 .account-naam {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 10%;
   left: 10%;
@@ -120,45 +122,19 @@ input[id="password_popup_password_confirmation"]{
   line-height: 3;
 }
 
+.account-naam div {
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+}
+
 /* de placeholder tekst in het midden */
 input[type="text"]:disabled {
   background: #dddddd;
 }
 
-.account-firstname {
-  position: absolute;
-  top: 5vw;
-  left: 13.5vw;
-  width: 12vw;
-  height: 1.5vw;
-  background-color: #ffffff;
-  border: 0.1vw solid #000000;
-}
-
-.account-lastname {
-  position: absolute;
-  top: 8vw;
-  left: 13.5vw;
-  width: 12vw;
-  height: 1.5vw;
-  background-color: #ffffff;
-  border: 0.1vw solid #000000;
-}
-
-.account-email {
-  position: absolute;
-  top: 11vw;
-  left: 13.5vw;
-  width: 12vw;
-  height: 1.5vw;
-  background-color: #ffffff;
-  border: 0.1vw solid #000000;
-}
-
-.account_gender {
-  position: absolute;
-  top: 14vw;
-  left: 13.5vw;
+.account {
+  margin-top: 10px;
   width: 12vw;
   height: 1.5vw;
   background-color: #ffffff;
@@ -201,44 +177,21 @@ input[type="text"]:disabled {
   line-height: 3;
 }
 
-.account_age {
-  position: absolute;
-  top: 22vw;
-  left: 13.5vw;
-  width: 12vw;
-  height: 1.5vw;
-  background-color: #ffffff;
-  border: 0.1vw solid #000000;
-}
-
-.account_length {
-  position: absolute;
-  top: 25vw;
-  left: 13.5vw;
-  width: 12vw;
-  height: 1.5vw;
-  background-color: #ffffff;
-  border: 0.1vw solid #000000;
-}
-
-.account_weight {
-  position: absolute;
-  top: 28vw;
-  left: 13.5vw;
-  width: 12vw;
-  height: 1.5vw;
-  background-color: #ffffff;
-  border: 0.1vw solid #000000;
+.account-bmi-gegevens div {
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
 }
 
 .account-bewerken {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: linear-gradient(to right, #0097B2, #A7C520);
   width: 15vw;
   height: 3vw;
   border-radius: 10vw;
-  top: 32vw;
-  left: 10.5vw;
+  top: 30vw;
   border: none;
   cursor: pointer;
 }
@@ -254,16 +207,12 @@ input[type="text"]:disabled {
 
 .account-verwijderen-text {
   position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #eb4034;
-  /* Kleur #E5FFD0 */
   font-family: 'HORIZON', sans-serif;
-  /* Lettertype HORIZON */
   font-weight: bold;
-  /* Maak de tekst bold */
   text-decoration: none;
   font-size: 1.2vw;
-  top: 37vw;
-  /* Aanpassen aan gewenste positie */
-  left: 12vw;
-  /* Aanpassen aan gewenste positie */
+  top: 33vw;
 }
