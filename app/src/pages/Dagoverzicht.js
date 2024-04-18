@@ -368,6 +368,9 @@ const Dagoverzicht = () => {
                                 <div className="feitje">
                                     Hallo, Mijn naam is Bas Brouwer en ik ben nu 3 uur lang bezig
                                     met dit. Het is 2 uur 's nachts en ik wil dood.
+
+                                    Hallo mijn naam is Kevin Houwerzijl en ik ben hier net 3 uur lang mee bezig geweest. Ik kan geen popup of het woordje "activity" meer zien, dus ik ga nu lekker slapen.
+                                    
                                 </div>
                             </div>
                         </div>
