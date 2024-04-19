@@ -15,6 +15,7 @@ import Maandoverzicht from "./pages/Maandoverzicht";
 import logo from "./img/caloriecommander.png";
 
 const App = () => {
+  const clickeddate = new Date();
   return (
     <Router>
       <AppContent />
