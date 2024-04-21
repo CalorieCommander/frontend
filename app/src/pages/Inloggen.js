@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './Inloggen.css';
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Inloggen = () => {
   const [errors, setErrors] = useState({});
@@ -32,7 +32,6 @@ const Inloggen = () => {
         const clickeddate = new Date();
         const jsonData = await response.json();
         localStorage.setItem('token', jsonData.access_token);
-        localStorage.setItem('first_name', jsonData.user.first_name);
         navigate(
           '/dagoverzicht',
           {

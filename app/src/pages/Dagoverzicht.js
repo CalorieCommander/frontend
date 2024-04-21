@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 import "./Dagoverzicht.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../img/caloriecommander.png";
@@ -11,6 +12,7 @@ import plus2 from "../img/plus2.png";
 import jogging2 from "../img/jogging.png";
 import min from "../img/interface.png";
 import check from "../img/checked.png";
+import { click } from "@testing-library/user-event/dist/click";
 const Dagoverzicht = () => {
     const [activityData, setActivity] = useState({
         name: "",
@@ -37,7 +39,7 @@ const Dagoverzicht = () => {
     };
 
     const openPopup2 = (e) => {
-        activity = dateData.activities.find(activity => activity.id === e.target.value);
+        activity = dateData.activities.find(activity => activity.id == e.target.value);
         setActivity({ ...activityData, name: activity.name, activity_id: activity.id });
         setShowPopup2(true);
     };
@@ -63,10 +65,8 @@ const Dagoverzicht = () => {
                     barcode: meal.code,
                 })
             })
-            if (response.status === 405 || response.status === 401) {
-                navigate('/login');
+            if (!response.ok) {
             }
-
 
             const response_data = await response.json();
             setClicked(response_data);
@@ -127,6 +127,8 @@ const Dagoverzicht = () => {
         const dayOfMonth = currentDate.getDate();
         return dailyFacts[dayOfMonth - 1] || "Geen feit beschikbaar";
     };
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     // Haal het feit van de dag op
     let currentDate = "";
     if (state == null) {
@@ -136,7 +138,12 @@ const Dagoverzicht = () => {
         currentDate = state.clickeddate;
     }
     const dailyFact = getDailyFact();
-    const progressPercentage = (totalMealCalories / dailyCalorieGoal) * 100; // Bereken de voortgang in procenten
+
+
+
+    const totalCaloriesGoal = 3000; // Het doel voor totale calorieën
+    const consumedCalories = 1500; // Het aantal geconsumeerde calorieën
+    const progressPercentage = (consumedCalories / totalCaloriesGoal) * 100; // Bereken de voortgang in procenten
     const [dateData, setData] = useState({});
     const getToken = () => {
         return localStorage.getItem('token');
@@ -144,10 +151,6 @@ const Dagoverzicht = () => {
     useEffect(() => {
         const userData = async () => {
             const token = getToken();
-            if(token === null || token === undefined)
-            {
-                navigate('/login');
-            }
             try {
                 const response = await fetch('http://127.0.0.1:8000/api/date', {
                     method: 'post',
@@ -159,17 +162,11 @@ const Dagoverzicht = () => {
                         date: currentDate,
                     })
                 })
-                console.log(response.status);
-                if (response.status === 405 || response.status === 401) {
-                    navigate('/login');
+                if (!response.ok) {
                 }
 
                 const dateData = await response.json();
                 setData(dateData);
-                setActivityCount(dateData.date_activities.length)
-                setTotalMealCalories(dateData.date.calories_consumed)
-                setDailyCalorieGoal(dateData.goal.daily_calories)
-                console.log(dateData);
             } catch (error) {
                 console.log(error);
             }
@@ -195,10 +192,10 @@ const Dagoverzicht = () => {
                     kilometers: kilometers.kilometers,
                 })
             })
-            if (response.status === 405 || response.status === 401) {
-                navigate('/login');
+            if (!response.ok) {
             }
 
+            const response_data = await response.json();
             closePopup1();
             closePopup2();
         } catch (error) {
@@ -222,19 +219,16 @@ const Dagoverzicht = () => {
                     search_data: search_data.search_data,
                 })
             })
-            if (response.status === 405 || response.status === 401) {
-                navigate('/login');
+            if (!response.ok) {
             }
-
             const response_meals = await response.json();
-            console.log(response_meals);
             setSearched(response_meals);
         } catch (error) {
             console.log(error);
         }
     };
     function ProductNull() {
-        if (clicked_meal.product === undefined) {
+        if (clicked_meal.product == undefined) {
             return null;
         }
         else {
@@ -336,8 +330,8 @@ const Dagoverzicht = () => {
                 <span className="dag-samenvatting-text">Samenvatting</span>
                 <div className="dag-midden-border">
                     <span className="dag-activiteit">Activiteiten</span>
-                    <span className="dag-activiteit-count">{activityCount}</span>
-                    <span className="dag-count">{totalMealCalories} kcal</span>
+                    <span className="dag-activiteit-count">0</span>
+                    <span className="dag-count">0</span>
 
                     <div className="dag-progress-bar">
                         <div
@@ -345,7 +339,7 @@ const Dagoverzicht = () => {
                             style={{ width: `${progressPercentage}%` }}
                         ></div>
                     </div>
-                    <span className="dag-calorie-count">{dailyCalorieGoal} kcal</span>
+                    <span className="dag-calorie-count">{dailyCalorieGoal}</span>
                 </div>
             </div>
             <div

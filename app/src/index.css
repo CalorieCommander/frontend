@@ -21,15 +21,7 @@ body{
   padding-left: 3vw;
   padding-top: 0.7vw;
 }
-.name-corner {
-  position: absolute;
-  color: #E5FFD0;
-  font-family: 'HORIZON', sans-serif;
-  font-weight: 800;
-  font-size: 20px;
-  left: 90vw;
-  top: 3vw;
-}
+
 .home {
   position: absolute;
   color: white;
