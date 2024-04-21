@@ -164,8 +164,7 @@ const Accountpagina = () => {
                         Geslacht
                         <input className="account" name="account_gender" type="text" onChange={handleChange} defaultValue={data.user.gender} />
                     </div>
-                </div>
-                
+                </div>   
                 
                 
                 <form onSubmit={handleSubmit}>
