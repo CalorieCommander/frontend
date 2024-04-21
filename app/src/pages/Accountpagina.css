@@ -1,11 +1,4 @@
-.name-corner {
-  position: absolute;
-  color: #E5FFD0;
-  font-family: 'HORIZON', sans-serif;
-  font-weight: 800;
-  left: 90vw;
-  top: 3vw;
-}
+
 
 /* hier komen de aanpassingen voor de accountinstellingen */
 .account-overlay {
@@ -79,7 +72,7 @@ input[id="password_popup_password_confirmation"]{
 
 .account-border {
   width: 35vw;
-  height: 80vh;
+  height: 85vh;
   border: 2px solid #000000;
   border-radius: 20px;
   margin: 10vh auto;
@@ -145,7 +138,7 @@ input[type="text"]:disabled {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 45%;
+  top: 40%;
   font-family: 'Wachtwoord veranderen', sans-serif;
   font-size: 1vw;
   background-color: #0097B2;
@@ -191,7 +184,7 @@ input[type="text"]:disabled {
   width: 15vw;
   height: 3vw;
   border-radius: 10vw;
-  top: 30vw;
+  top: 39vw;
   border: none;
   cursor: pointer;
 }
@@ -214,7 +207,7 @@ input[type="text"]:disabled {
   font-weight: bold;
   text-decoration: none;
   font-size: 1.2vw;
-  top: 33vw;
+  top: 42vw;
 }
 /* activiteit toevoegen */
 .act-add-container {

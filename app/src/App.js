@@ -4,6 +4,7 @@ import {
   Route,
   Routes,
   useLocation,
+  Link,
 } from "react-router-dom";
 import "./index.css";
 import Homepage from "./pages/Homepage";
@@ -24,6 +25,10 @@ const App = () => {
 
 const AppContent = () => {
   const location = useLocation();
+  const getName = () => {
+    return localStorage.getItem('first_name');
+  };
+  const name = getName();
   const showName =
     location.pathname !== "/" &&
     location.pathname !== "/login" &&
@@ -33,13 +38,13 @@ const AppContent = () => {
     <div>
       <div className="navbar">
         <img src={logo} alt="logo" className="logo" />
-        {showName && <div className="name-corner">CERCHIO</div>}
+        <Link to="/account">
+          {showName && <div className="name-corner">{name}</div>}
+        </Link>
       </div>
       <div className="line"></div>
       <Routes>
         <Route path="/pages/Account" element={<Accountpagina />} />
-      </Routes>
-      <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/login" element={<Inloggen />} />
         <Route exact path="/account" element={<Accountpagina />} />
