@@ -19,6 +19,12 @@ const Dagoverzicht = () => {
         activity_id: "",
     });
     const [kilometers, setKilometers] = useState({});
+    const [search_data, setSearch] = useState({});
+    const [clicked_meal, setClicked] = useState({
+        name: "",
+        activity_id: "",
+    });
+    const [searched_meals, setSearched] = useState({});
     const [activityCount, setActivityCount] = useState(0);
     const [totalMealCalories, setTotalMealCalories] = useState(0);
     const [dailyCalorieGoal, setDailyCalorieGoal] = useState(0);
@@ -45,10 +51,31 @@ const Dagoverzicht = () => {
     const openPopup4 = () => {
         setShowPopup4(true);
     };
+    const openPopup5 = async (key) => {
+        const meal = searched_meals.products[key];
+        const token = getToken();
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/meals/search_nutriments', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': "Bearer " + token,
+                },
+                body: JSON.stringify({
+                    barcode: meal.code,
+                })
+            })
+            if (!response.ok) {
+            }
 
-    const openPopup5 = () => {
+            const response_data = await response.json();
+            setClicked(response_data);
+        } catch (error) {
+            console.log(error);
+        }
         setShowPopup5(true);
-    };
+    }
+    //setClicked({ ...clicked_meal, product_name: meal.product_name, brand: meal.brands });
 
     const closePopup1 = () => {
         setShowPopup1(false);
@@ -97,7 +124,6 @@ const Dagoverzicht = () => {
     let navigate = useNavigate();
     // Functie om het feit van de dag op te halen op basis van de huidige datum
     const getDailyFact = () => {
-        const currentDate = new Date();
         const dayOfMonth = currentDate.getDate();
         return dailyFacts[dayOfMonth - 1] || "Geen feit beschikbaar";
     };
@@ -118,7 +144,7 @@ const Dagoverzicht = () => {
     const totalCaloriesGoal = 3000; // Het doel voor totale calorieën
     const consumedCalories = 1500; // Het aantal geconsumeerde calorieën
     const progressPercentage = (consumedCalories / totalCaloriesGoal) * 100; // Bereken de voortgang in procenten
-    const [dateData, setData] = useState("");
+    const [dateData, setData] = useState({});
     const getToken = () => {
         return localStorage.getItem('token');
     };
@@ -140,7 +166,6 @@ const Dagoverzicht = () => {
                 }
 
                 const dateData = await response.json();
-                console.log(dateData);
                 setData(dateData);
             } catch (error) {
                 console.log(error);
@@ -152,9 +177,7 @@ const Dagoverzicht = () => {
         setKilometers({ ...kilometers, kilometers: e.target.value });
     };
     const saveActivity = async (e) => {
-        e.preventDefault();
         setKilometers({ ...kilometers, kilometers: e.target.value });
-        console.log(currentDate, activityData.activity_id, kilometers.kilometers);
         const token = getToken();
         try {
             const response = await fetch('http://127.0.0.1:8000/api/activities/add', {
@@ -179,29 +202,112 @@ const Dagoverzicht = () => {
             console.log(error);
         }
     };
-    return (
-        <div className="Test">
-            <div className="dag-top-border">
-                <span className="dag-vandaag-text">{dateData.date_text}</span>
-                <span className="dag-datum-text">{dateData.date_show}</span>
-                <span className="dag-week-text">Week {dateData.week_number}</span>
-                <Link to="/maandoverzicht">
-                    <img src={calendar} alt="calendar" className="dag-calendar" />
-                </Link>
-                <span className="dag-samenvatting-text">Samenvatting</span>
-                <div className="dag-midden-border">
-                    <span className="dag-activiteit">Activiteiten</span>
-                    <span className="dag-activiteit-count">{activityCount}</span>
-                    <span className="dag-count">{totalMealCalories}</span>
-                    <div className="dag-progress-bar">
-                        <div
-                            className="dag-progress-bar-fill"
-                            style={{ width: `${progressPercentage}%` }}
-                        ></div>
+    const handleSearch = (e) => {
+        setSearch({ ...search_data, search_data: e.target.value });
+    };
+    const searchMeal = async (e) => {
+        e.preventDefault();
+        const token = getToken();
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/meals/search', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': "Bearer " + token,
+                },
+                body: JSON.stringify({
+                    search_data: search_data.search_data,
+                })
+            })
+            if (!response.ok) {
+            }
+            const response_meals = await response.json();
+            setSearched(response_meals);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    function ProductNull() {
+        if (clicked_meal.product == undefined) {
+            return null;
+        }
+        else {
+            return <div
+                className={`overlay ${showPopup5 ? "show" : ""}`}
+                id="overlay"
+                onClick={closePopup5}
+            >
+                <div className="popup" onClick={(e) => e.stopPropagation()}>
+                    <div className="maaltijd-container">
+                        <img src={apple} alt="maaltijd" className="maaltijd-img"></img>
+                        <h2 className="maaltijd-title">{clicked_meal.product.product_name}</h2>
+                        <div className="blokjes-container">
+                            <div className="kenmerken-container">
+                                <h5 className="kenmerken-title">Kenmerken</h5>
+                                <div className="kenmerken">
+                                    <div className="kenmerk">
+                                        Portie
+                                        <div className="kenmerk-digit">100g</div>
+                                    </div>
+                                    <div className="kenmerk-line"></div>
+                                    <div className="kenmerk">
+                                        Energie (kcal)
+                                        <div className="kenmerk-digit">{clicked_meal.product.nutriments["energy-kcal_100g"]}</div>
+                                    </div>
+                                    <div className="kenmerk-line"></div>
+                                    <div className="kenmerk">
+                                        Vetten
+                                        <div className="kenmerk-digit">{clicked_meal.product.nutriments.fat_100g} gram</div>
+                                    </div>
+                                    <div className="kenmerk-line"></div>
+                                    <div className="kenmerk">
+                                        Suikers
+                                        <div className="kenmerk-digit">{clicked_meal.product.nutriments.sugars_100g} gram</div>
+                                    </div>
+                                    <div className="kenmerk-line"></div>
+                                </div>
+                                <button onClick={() => addMeal(clicked_meal.product.code)} className="maaltijd-opslaan">Toevoegen</button>
+                            </div>
+                            <div className="feitjes-container">
+                                <h5 className="kenmerken-title">Merk(en)</h5>
+                                <div className="feitje">
+                                    {clicked_meal.product.brands}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span className="dag-calorie-count">{dailyCalorieGoal}</span>
                 </div>
             </div>
+        }
+    }
+    const addMeal = async (e) => {
+        const token = getToken();
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/meals/add', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': "Bearer " + token,
+                },
+                body: JSON.stringify({
+                    barcode: clicked_meal.product.code,
+                    date: currentDate,
+                })
+            })
+            if (!response.ok) {
+            }
+            const response_data = await response.json();
+            closePopup3();
+            closePopup4();
+            closePopup5();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    return (
+        <div className="Test">
+
 
             <div className="dag-maaltijd">Maaltijden</div>
             <div className="dag-middle-border">
@@ -213,6 +319,28 @@ const Dagoverzicht = () => {
                     <img src={plus} alt="plus" className="dag-plus"></img>
                     <div className="dag-toevoegen">Toevoegen</div>
                 </button>
+            </div>
+            <div className="dag-top-border">
+                <span className="dag-vandaag-text">{dateData.date_text}</span>
+                <span className="dag-datum-text">{dateData.date_show}</span>
+                <span className="dag-week-text">Week {dateData.week_number}</span>
+                <Link to="/maandoverzicht">
+                    <img src={calendar} alt="calendar" className="dag-calendar" />
+                </Link>
+                <span className="dag-samenvatting-text">Samenvatting</span>
+                <div className="dag-midden-border">
+                    <span className="dag-activiteit">Activiteiten</span>
+                    <span className="dag-activiteit-count">0</span>
+                    <span className="dag-count">0</span>
+
+                    <div className="dag-progress-bar">
+                        <div
+                            className="dag-progress-bar-fill"
+                            style={{ width: `${progressPercentage}%` }}
+                        ></div>
+                    </div>
+                    <span className="dag-calorie-count">{dailyCalorieGoal}</span>
+                </div>
             </div>
             <div
                 className={`overlay ${showPopup1 ? "show" : ""}`}
@@ -285,16 +413,11 @@ const Dagoverzicht = () => {
                             <button className="search-button" onClick={openPopup4}>
                                 Wat wil je zoeken?
                             </button>
-                            <div className="maaltijd-1">
-                                <div id="test1">Kwark 0% vet</div>
-                                <div id="test2" className="incline-block">
-                                    Optimel, normale portie 100g
-                                </div>
-                            </div>
-                            <div className="maaltijd-2">
-                                <div id="test1">Broodje worst</div>
-                                <div id="test2">Normale portie 150g</div>
-                            </div>
+                            <h5 id="recent-title">Recente zoekopdrachten</h5>
+                            {dateData.histories && dateData.histories.map((history, i) => {
+                                // Return the element. Also pass key     
+                                return (<h5 key={i} id="recent">{history.data}</h5>)
+                            })}
                         </div>
                     </div>
                 </div>
@@ -306,87 +429,44 @@ const Dagoverzicht = () => {
             >
                 <div className="popup" onClick={(e) => e.stopPropagation()}>
                     <div className="search-container">
-                        <input
-                            type="text"
-                            id="search"
-                            name="search"
-                            placeholder="Zoek een maaltijd"
-                            required
-                        ></input>
-                        <h5 id="recent-title">Recente zoekopdrachten</h5>
-                        <h5 id="recent">kwark</h5>
-                        <h5 id="recent">ananas</h5>
-                        <h5 id="recent">help het is 1 uur 's nachts ik wil dood</h5>
-                        <button className="result" onClick={openPopup5}>
-                            <img src={apple} alt="result-img" className="result-img"></img>
-                            <h5 className="result-title">
-                                DIT DINGETJE KOMT PAS ALS JE IETS INTYPT IN DE SEARCHBAR
-                            </h5>
-                        </button>
+                        <form onSubmit={searchMeal}>
+                            <input
+                                type="text"
+                                id="search"
+                                name="search"
+                                placeholder="Zoek een maaltijd"
+                                required onChange={handleSearch}
+                            ></input>
+                        </form>
+
+                        {searched_meals.products && searched_meals.products.map((meal, i) => {
+                            // Return the element. Also pass key     
+                            return (<button key={i} className="result" onClick={() => openPopup5(i)}>
+                                <img src={apple} alt="result-img" className="result-img"></img>
+                                <h5 className="result-title">
+                                    {meal.product_name} {meal.brands}
+                                </h5>
+                            </button>)
+                        })}
+
                     </div>
                 </div>
             </div>
+            <ProductNull />
 
-            <div
-                className={`overlay ${showPopup5 ? "show" : ""}`}
-                id="overlay"
-                onClick={closePopup5}
-            >
-                <div className="popup" onClick={(e) => e.stopPropagation()}>
-                    <div className="maaltijd-container">
-                        <img src={apple} alt="maaltijd" className="maaltijd-img"></img>
-                        <h2 className="maaltijd-title">(maaltijd)</h2>
-                        <div className="blokjes-container">
-                            <div className="kenmerken-container">
-                                <h5 className="kenmerken-title">kenmerken</h5>
-                                <div className="kenmerken">
-                                    <div className="kenmerk">
-                                        kenmerk
-                                        <div className="kenmerk-digit">150g</div>
-                                    </div>
-                                    <div className="kenmerk-line"></div>
-                                    <div className="kenmerk">
-                                        Energie (kcal)
-                                        <div className="kenmerk-digit">80</div>
-                                    </div>
-                                    <div className="kenmerk-line"></div>
-                                    <div className="kenmerk">
-                                        Vetten
-                                        <div className="kenmerk-digit">0</div>
-                                    </div>
-                                    <div className="kenmerk-line"></div>
-                                    <div className="kenmerk">
-                                        Suikers
-                                        <div className="kenmerk-digit">12g</div>
-                                    </div>
-                                    <div className="kenmerk-line"></div>
-                                </div>
-                                <button className="maaltijd-opslaan">Toevoegen</button>
-                            </div>
-                            <div className="feitjes-container">
-                                <h5 className="kenmerken-title">leuk feitje</h5>
-                                <div className="feitje">
-                                    Hallo, Mijn naam is Bas Brouwer en ik ben nu 3 uur lang bezig
-                                    met dit. Het is 2 uur 's nachts en ik wil dood.
-
-                                    Hallo mijn naam is Kevin Houwerzijl en ik ben hier net 3 uur lang mee bezig geweest. Ik kan geen popup of het woordje "activity" meer zien, dus ik ga nu lekker slapen.
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div className="dag-middle3-border">
                 <div className="dag-maaltijd2-toevoeg">Vandaag gegeten</div>
-                <div className="dag-little-border">
-                    <img src={apple} alt="dag-apple" className="dag-apple"></img>
-                    <div className="dag-apple-text">Appel</div>
-                    <div className="dag-apple-info">260 kcal Portie (200 gram)</div>
-                    <button className="dag-button">
-                        <img src={plus2} alt="dag-plus2" className="dag-plus2"></img>
-                    </button>
-                </div>
+                {dateData.date_meals && dateData.date_meals.map((meal, i) => {
+                    // Return the element. Also pass key     
+                    return (<div key={i} className="dag-little-border">
+                        <img src={apple} alt="dag-apple" className="dag-apple"></img>
+                        <div className="dag-apple-text">{meal.meal.name}</div>
+                        <div className="dag-apple-info">{meal.calories_total} kcal (100 gram)</div>
+                        <button className="dag-button">
+                            <img src={plus2} alt="dag-plus2" className="dag-plus2"></img>
+                        </button>
+                    </div>)
+                })}
             </div>
 
             <div className="dag-middle4-border">

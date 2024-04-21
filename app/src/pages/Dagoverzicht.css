@@ -215,7 +215,6 @@ input[id="dag_number"]{
 .result{
   background-color: #ffffff;
   margin-top: 50px;
-  position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 350px;
@@ -231,7 +230,6 @@ input[id="dag_number"]{
 }
 
 .result-img{
-  position: absolute;
   left: 10px;
   top: 10px;
   width: 30px;
@@ -239,7 +237,6 @@ input[id="dag_number"]{
 }
 
 .result-title{
-  position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   top: 10px;
