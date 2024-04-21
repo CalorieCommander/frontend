@@ -1,45 +1,9 @@
 import React, { useState, useEffect } from "react";
 import './Accountpagina.css';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Accountpagina = () => {
     let navigate = useNavigate();
-    const [showPopup1, setShowPopup1] = useState(false);
-    const [showPopup2, setShowPopup2] = useState(false);
-    const [showPopup3, setShowPopup3] = useState(false);
-    const [showPopup4, setShowPopup4] = useState(false);
-    const [showPopup5, setShowPopup5] = useState(false);
-  
-    const openPopup1 = () => {
-      setShowPopup1(true);
-    };
-    const openPopup2 = () => {
-      setShowPopup2(true);
-    };
-    const openPopup3 = () => {
-      setShowPopup3(true);
-    };
-    const openPopup4 = () => {
-      setShowPopup4(true);
-    };
-    const openPopup5 = () => {
-      setShowPopup5(true);
-    };
-    const closePopup1 = () => {
-      setShowPopup1(false);
-    };
-    const closePopup2 = () => {
-      setShowPopup2(false);
-    };
-    const closePopup3 = () => {
-      setShowPopup3(false);
-    };
-    const closePopup4 = () => {
-      setShowPopup4(false);
-    };
-    const closePopup5 = () => {
-      setShowPopup5(false);
-    };
     const [errors, setErrors] = useState({});
     const [showPopup, setShowPopup] = useState(false);
     const openPopup = () => {
@@ -48,7 +12,10 @@ const Accountpagina = () => {
     const closePopup = () => {
         setShowPopup(false);
     };
-    const [data, setData] = useState("");
+    const [data, setData] = useState({
+        user: '',
+        goal: '',
+    });
     const getToken = () => {
         return localStorage.getItem('token');
     };
@@ -64,8 +31,8 @@ const Accountpagina = () => {
                         'Authorization': "Bearer " + token,
                     },
                 })
-                if (!response.ok) {
-                    console.log(response);
+                if (response.status === 405 || response.status === 401) {
+                    navigate('/login');
                 }
 
                 const jsonData = await response.json();
@@ -79,11 +46,12 @@ const Accountpagina = () => {
     const [formData, setFormData] = useState({
         account_gender: '',
         account_age: '',
-        account_length: '',
+        account_height: '',
         account_weight: '',
+        account_goal_weight: '',
+        account_goal_date: '',
     });
     const handleSubmit = async (e) => {
-        console.log(formData);
         e.preventDefault();
         const token = getToken();
         try {
@@ -98,11 +66,13 @@ const Accountpagina = () => {
                     gender: formData.account_gender,
                     age: formData.account_age,
                     weight: formData.account_weight,
-                    height: formData.account_length,
+                    height: formData.account_height,
+                    goal_weight: formData.account_goal_weight,
+                    goal_date: formData.account_goal_date,
                 })
             });
-            if (!response.ok) {
-                console.log(response);
+            if (response.status === 405 || response.status === 401) {
+                navigate('/login');
             }
             const respond = await response.json();
             console.log(respond);
@@ -122,7 +92,6 @@ const Accountpagina = () => {
         setPasswordPopupData({ ...passwordPopupData, [e.target.name]: e.target.value });
     };
     const handlePasswordSubmit = async (e) => {
-        console.log(passwordPopupData);
         e.preventDefault();
         const token = getToken();
         try {
@@ -138,6 +107,9 @@ const Accountpagina = () => {
                     password_confirmation: passwordPopupData.account_password_confirmation,
                 })
             });
+            if (response.status === 405 || response.status === 401) {
+                navigate('/login');
+            }
             if (!response.ok) {
                 const responseData = await response.json();
                 if (response.status === 422) {
@@ -173,24 +145,24 @@ const Accountpagina = () => {
                 </div>
             </div>
             <div className="account-border">
-                <div className="account-name">{data.first_name}</div>
+                <div className="account-name">{data.user.first_name}</div>
                 <div className="account-gegevens">Gegevens</div>
                 <div className="account-naam">
                     <div>
                         Voornaam
-                        <input className="account" name="account-firstname" disabled type="text" defaultValue={data.first_name} />
+                        <input className="account" name="account-firstname" disabled type="text" defaultValue={data.user.first_name} />
                     </div>
                     <div>
                         Achternaam
-                        <input className="account" name="account-lastname" disabled type="text" defaultValue={data.last_name} />
+                        <input className="account" name="account-lastname" disabled type="text" defaultValue={data.user.last_name} />
                     </div>
                     <div>
                         E-mailadres
-                        <input className="account" name="account-email" disabled type="text" defaultValue={data.email} />
+                        <input className="account" name="account-email" disabled type="text" defaultValue={data.user.email} />
                     </div>
                     <div>
                         Geslacht
-                        <input className="account" name="account_gender" type="text" onChange={handleChange} defaultValue={data.gender} />
+                        <input className="account" name="account_gender" type="text" onChange={handleChange} defaultValue={data.user.gender} />
                     </div>
                 </div>
                 
@@ -204,24 +176,32 @@ const Accountpagina = () => {
                     <div className="account-bmi-gegevens">
                         <div>
                             Leeftijd:
-                            <input className="account" name="account_age" type="text" onChange={handleChange} defaultValue={data.age} />
+                            <input className="account" name="account_age" type="text" onChange={handleChange} defaultValue={data.user.age} />
                         </div>
                         <div>
                             Lengte (CM):
-                            <input className="account" name="account_height" type="text" onChange={handleChange} defaultValue={data.height} />
+                            <input className="account" name="account_height" type="text" onChange={handleChange} defaultValue={data.user.height} />
                         </div>
                         <div>
                             Gewicht (KG):
-                            <input className="account" name="account_weight" type="text" onChange={handleChange} defaultValue={data.weight} />
+                            <input className="account" name="account_weight" type="text" onChange={handleChange} defaultValue={data.user.weight} />
+                        </div>
+                        <div>
+                            Doel (KG):
+                            <input className="account" name="account_goal_weight" type="text" onChange={handleChange} defaultValue={data.goal.goal_weight} />
+                        </div>
+                        <div>
+                            Doel (datum):
+                            <input className="account" name="account_goal_date" type="date" onChange={handleChange} defaultValue={data.goal.date} />
                         </div>
                     </div>
                     <button className="account-bewerken">
                         Gegevens bewerken
                     </button>
-                    <a href="#" className="account-verwijderen-text">
+                </form>
+                <a href="#" className="account-verwijderen-text">
                         Account verwijderen
                     </a>
-                </form>
             </div>
         </div>
     );
