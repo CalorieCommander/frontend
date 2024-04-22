@@ -198,9 +198,6 @@ const Accountpagina = () => {
                         Gegevens bewerken
                     </button>
                 </form>
-                <a href="#" className="account-verwijderen-text">
-                        Account verwijderen
-                    </a>
             </div>
         </div>
     );

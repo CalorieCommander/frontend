@@ -33,11 +33,17 @@ const AppContent = () => {
     location.pathname !== "/" &&
     location.pathname !== "/login" &&
     location.pathname !== "/register";
-
+    const logo_link =
+    location.pathname !== "/" &&
+    location.pathname !== "/login" &&
+    location.pathname !== "/register";
   return (
     <div>
       <div className="navbar">
-        <img src={logo} alt="logo" className="logo" />
+      <Link to="/dagoverzicht">
+      {logo_link && <img src={logo} alt="logo" className="logo" />}
+        </Link>
+
         <Link to="/account">
           {showName && <div className="name-corner">{name}</div>}
         </Link>

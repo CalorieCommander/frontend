@@ -17,6 +17,7 @@ const Dagoverzicht = () => {
         activity_id: "",
     });
     const [kilometers, setKilometers] = useState({});
+    const [meal_id, setMealId] = useState({});
     const [search_data, setSearch] = useState({});
     const [clicked_meal, setClicked] = useState({
         name: "",
@@ -37,7 +38,8 @@ const Dagoverzicht = () => {
     };
 
     const openPopup2 = (e) => {
-        activity = dateData.activities.find(activity => activity.id === e.target.value);
+        activity = dateData.activities.find(activity => activity.id === parseInt(e.target.value));
+        console.log(dateData.activities, activity)
         setActivity({ ...activityData, name: activity.name, activity_id: activity.id });
         setShowPopup2(true);
     };
@@ -159,17 +161,30 @@ const Dagoverzicht = () => {
                         date: currentDate,
                     })
                 })
-                console.log(response.status);
                 if (response.status === 405 || response.status === 401) {
                     navigate('/login');
                 }
 
                 const dateData = await response.json();
                 setData(dateData);
-                setActivityCount(dateData.date_activities.length)
-                setTotalMealCalories(dateData.date.calories_consumed)
-                setDailyCalorieGoal(dateData.goal.daily_calories)
-                console.log(dateData);
+                if(dateData.date === undefined || dateData.date === null)
+                {
+                    setTotalMealCalories(0)
+                    setTotalMealCalories(0)
+                }
+                else
+                {
+                    setTotalMealCalories(dateData.date.calories_consumed)
+                    setActivityCount(dateData.date_activities.length)
+                }
+                if(dateData.goal.daily_calories === undefined || dateData.goal.daily_calories === null)
+                {
+                    setDailyCalorieGoal(0)
+                }
+                else
+                {
+                    setDailyCalorieGoal(dateData.goal.daily_calories)
+                }
             } catch (error) {
                 console.log(error);
             }
@@ -227,7 +242,6 @@ const Dagoverzicht = () => {
             }
 
             const response_meals = await response.json();
-            console.log(response_meals);
             setSearched(response_meals);
         } catch (error) {
             console.log(error);
@@ -306,15 +320,34 @@ const Dagoverzicht = () => {
             closePopup3();
             closePopup4();
             closePopup5();
+            navigate('/dagoverzicht');
         } catch (error) {
             console.log(error);
         }
     };
-
+    const deleteMeal = async (e) => {
+        const mealId = e.target.getAttribute('value');
+        const token = getToken();
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/meals/remove', {
+                method: 'delete',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': "Bearer " + token,
+                },
+                body: JSON.stringify({
+                    date_meal_id: mealId,
+                })
+            })
+            if (!response.ok) {
+            }
+            const response_data = await response.json();
+        } catch (error) {
+            console.log(error);
+        }
+    };
     return (
         <div className="Test">
-
-
             <div className="dag-maaltijd">Maaltijden</div>
             <div className="dag-middle-border">
                 <img src={salad} alt="salad" className="dag-salad" />
@@ -335,9 +368,10 @@ const Dagoverzicht = () => {
                 </Link>
                 <span className="dag-samenvatting-text">Samenvatting</span>
                 <div className="dag-midden-border">
-                    <span className="dag-activiteit">Activiteiten</span>
-                    <span className="dag-activiteit-count">{activityCount}</span>
-                    <span className="dag-count">{totalMealCalories} kcal</span>
+                            <span className="dag-activiteit">Activiteiten</span>
+                            <span className="dag-activiteit-count">{activityCount}</span>
+                            <span className="dag-count">{totalMealCalories} kcal</span>
+
 
                     <div className="dag-progress-bar">
                         <div
@@ -468,9 +502,7 @@ const Dagoverzicht = () => {
                         <img src={apple} alt="dag-apple" className="dag-apple"></img>
                         <div className="dag-apple-text">{meal.meal.name}</div>
                         <div className="dag-apple-info">{meal.calories_total} kcal (100 gram)</div>
-                        <button className="dag-button">
-                            <img src={plus2} alt="dag-plus2" className="dag-plus2"></img>
-                        </button>
+                            <img src={plus2} value={meal.id} alt="dag-plus2" className="dag-plus2" onClick={deleteMeal} ></img>
                     </div>)
                 })}
             </div>
