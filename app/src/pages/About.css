@@ -1,0 +1,35 @@
+/* Alle informatie van ons in de about page */
+
+.about-info {
+    position: absolute;
+    color: black;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: bold; 
+    font-size: 2.5vw;
+    left: 44vw; 
+    top: 4.5vw;
+}
+
+.about-info-container {
+    position: relative;
+    width: 100%;
+    text-align: center; /* Center align the content */
+    margin-top: 10vw; /* Adjust the top margin to create space */
+  }
+  
+  .about-info-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2vw;
+    margin-bottom: 1vw; /* Add some space between each paragraph */
+  }
+  
+  .about-info-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1vw; /* Add some space below the list */
+  }
+  
+  .about-info-list li {
+    margin-bottom: 1vw;
+  }
+  
