@@ -179,11 +179,11 @@ const Dagoverzicht = () => {
                 }
                 if(dateData.goal.daily_calories === undefined || dateData.goal.daily_calories === null)
                 {
-                    setDailyCalorieGoal(dateData.goal.daily_calories)
+                    setDailyCalorieGoal(0)
                 }
                 else
                 {
-                    setDailyCalorieGoal(0)
+                    setDailyCalorieGoal(dateData.goal.daily_calories)
                 }
             } catch (error) {
                 console.log(error);
